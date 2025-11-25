@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simplon</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins", sans-serif;
+}
+.top-bar{
+    width:100%;
+    background:#F4AFC5;   
+    color:white;
+    text-align:center;
+    padding:8px 0;
+    font-size:14px;
+    font-weight:500;
+}
+
+
+.navbar{
+    width:100%;
+    background:#fff;
+    padding:18px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:2px solid #F4AFC5;
+}
+.logo{
+    font-size:26px;
+    font-weight:700;
+    color:#C1697F;
+    letter-spacing:2px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.logo img{
+    width:55px;
+    border-radius:10px;
+}
+.search-box{
+    display:flex;
+    align-items:center;
+    border-bottom:2px solid #C1697F;
+    padding:5px 10px;
+    width:250px;
+}
+
+.search-box input{
+    border:none;
+    outline:none;
+    font-size:14px;
+    flex:1;
+}
+.icons{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    font-size:20px;
+    color:#333;
+    cursor:pointer;
+}
+
+.icons i:hover{
+    color:#C1697F;
+}
+
+.book-btn{
+    background:#F8D7E2;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    text-transform:uppercase;
+}
+
+.book-btn:hover{
+    background:#E5AFC1;
+}
+.menu{
+    width:100%;
+    text-align:center;
+    padding:15px 0;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    font-weight:600;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#222;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    color:#C1697F;
+    border-bottom:2px solid #C1697F;
+    padding-bottom:3px;
+}
+@media (max-width: 1050px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .search-box {
+        margin-top: 10px;
+        width: 60%;
+        justify-content: center;
+    }
+
+    .icons {
+        margin-top: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .book-btn {
+        padding: 8px 16px;
+    }
+}
+@media (max-width: 768px) {
+    .logo {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .search-box {
+        width: 80%;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 10px 0;
+    }
+}
+@media (max-width: 500px) {
+    .navbar {
+        padding: 12px 10px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .icons {
+        gap: 15px;
+        font-size: 18px;
+    }
+
+    .menu {
+        gap: 15px;
+        font-size: 13px;
+    }
+
+    .logo img {
+        width: 45px;
+    }
+}
+.menu .dropdown {
+    position: relative;
+}
+.menu .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 10;
+    top: 100%;
+    left: 0;
+    border-radius: 5px;
+}
+.menu .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.menu .dropdown-content a {
+    color: #222;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.menu .dropdown-content a:hover {
+    background-color: #F8D7E2;
+    color: black;
+}
+.section-slider {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 15px; 
+    text-align: center;
+}
+
+.section-slider h2 {
+    font-size: 32px;
+    color: #C1697F;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+}
+
+.slider-container {
+    position: relative;
+    background: #F2C9D6;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden; 
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%;
+}
+
+.slide {
+    flex: 0 0 33.33%;
+    height: 450px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slide-content {
+    width: 45%;
+    padding-left: 50px;
+    text-align: left;
+    font-family: sans-serif;
+}
+
+.slide-content h3 {
+    font-size: 34px;
+    color: #222;
+    margin: 0;
+}
+
+.slide-content p {
+    color: #555;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.para{
+    font-size: 20px;
+    font-weight: 700;
+    color: #C1697F;
+    margin: 12px 0 25px 0;
+}
+
+.slider-a{
+    display: inline-block;
+    background: #E7B7C8;
+    color: #222;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.slider-a:hover {
+    background: #DFA8B8;
+}
+
+.slide-media {
+    width: 55%;
+    height: 100%;
+    background: #DFA8B8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+}
+
+.slide-media img,
+.slide-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.slider-dots {
+    margin-top: 20px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active-dot {
+    background: #C1697F;
+}
+
+@media (max-width: 768px) {
+    .simlon-product-slider {
+        padding: 0 10px;
+    }
+
+    .slide {
+        flex-direction: column;
+        height: auto;
+        min-height: 400px;
+        padding: 15px 0 25px 0; 
+    }
+    
+    .slide-content {
+        width: 100%;
+        padding: 10px 15px;
+        text-align: center;
+        order: 2;
+    }
+
+    .slide-media {
+        width: 100%;
+        height: 220px;
+        order: 1;
+    }
+    
+    .slide-content h3 {
+        font-size: 24px; 
+    }
+}
+.footer {
+    background-color: #EDEDED; 
+    color: #555555;
+    padding: 40px 20px 10px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:  #F8D7E2;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    padding-bottom: 20px;
+}
+
+.footer-col {
+    width: 30%;
+    margin-bottom: 30px;
+    min-width: 280px;
+}
+.footer-col h3, .footer-col h4 {
+    color: #222222; 
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.footer-logo {
+    color: #C1697F; 
+    font-size: 1.8em;
+    font-weight: 900;
+    margin-bottom: 5px;
+    border-bottom: none !important;
+}
+
+.brand {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list li {
+    margin-bottom: 10px;
+}
+
+.footer-link-clean {
+    color: #555555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95em;
+}
+
+.footer-link-clean:hover {
+    color: #C1697F; 
+}
+.footer-button {
+    display: inline-block;
+    padding: 8px 15px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    background-color: #E7B7C8; 
+    color: #222222;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.footer-button:hover {
+    background-color: #DFA8B8; 
+}
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #DFA8B8;
+    margin-top: 10px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.8em;
+    color: #777777;
+}
+</style>
+</head>
+<body>
+<div class="top-bar">
+ <p>Welcome to NAH Beauty Care | Free Shipping on Orders</p>
+</div>
+<header class="navbar">
+    <div class="logo">
+        <img src="https://img.freepik.com/premium-vector/beauty-parlour-logo-design_1023984-34389.jpg">
+        BEAUTY STUDIO
+    </div>
+    <div class="search-box">
+        <input type="text" placeholder="Search">
+        🔍
+    </div>
+
+    <div class="icons">
+        👤
+        🛒
+        <button class="book-btn">Book Appointment</button>
+    </div>
+
+</header>
+<nav class="menu">
+    <a href="#">Home</a>
+
+    <div class="dropdown">
+        <a href="#" class="dropbtn">Products ⌵</a>
+        <div class="dropdown-content">
+            <a href="mens.html">Men's</a>
+            <a href="womens.html">Women's</a>
+        </div>
+    </div>
+
+    <a href="Wedding Kits.html">Wedding Kits</a>
+    <a href="up coming product.html">Up Coming Products</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="about us.html">About us</a>
+    <a href="contact us.html">Contact us</a>
+    <a href="kids and baby care.html">Kids & Baby Care</a>
+</nav>
+
+<section class="section-slider">
+
+    <h2>Featured Collections</h2>
+
+    <div class="slider-container">
+
+        <div class="slider-wrapper" id="slider-wrapper">
+            <div class="slide" style="background:#F2C9D6;">
+                <div class="slide-content">
+                    <h3>HAIR CARE ESSENTIALS</h3>
+                    <p>Repair, replenish, and shine. Professional hair line for all types.</p>
+                    <p class="para">Starting from: $ 50</p>
+                    <a href="#" class="slider-a">Shop Hair Products</a>
+                </div>
+                <div class="slide-media">
+                    <video src="video4.mp4" autoplay loop muted playsinline></video>
+                </div>
+            </div>
+            <div class="slide" style="background:#F6F6F6;">
+                <div class="slide-content">
+                    <h3>ADVANCED SKIN KITS</h3>
+                    <p>Dermatologist recommended routine bundles.</p>
+                    <p class="para">Kit Price: $ 999</p>
+                    <a href="#" class="slider-a">Shop Skin Kits</a>
+                </div>
+                <div class="slide-media">
+                    <video src="video1 (2).mp4" autoplay loop muted playsinline></video>
+                </div>
+            </div>
+            <div class="slide" style="background:#f7e0e5;">
+                <div class="slide-content">
+                    <h3>WEDDING MAKE-UP COLLECTION</h3>
+                    <p>Flawless finish & long-lasting beauty.</p>
+                    <p class="para">Limited Edition: $ 500</p>
+                    <a href="#" class="slider-a">View Kits</a>
+                </div>
+                <div class="slide-media">
+                    <video src="video5.mp4" autoplay loop muted playsinline></video>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="slider-dots" id="slider-dots">
+        <span class="dot active-dot" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+    </div>
+
+</section>
+  <footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h3 class="footer-logo">SIMPLON</h3>
+            <p class="brand">Providing quality beauty care since 1985.</p>
+            
+            <h4>Navigation</h4>
+            <ul class="list">
+                <li><a href="#" class="footer-link-clean">Home Page</a></li>
+                <li><a href="#" class="footer-link-clean">About Us</a></li>
+                <li><a href="#" class="footer-link-clean">Feedback Page</a></li>
+                <li><a href="#" class="footer-link-clean">Place Dummy Order</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Contact Us</h3>
+            <p><strong>Head Office:</strong> [Address]</p>
+            <p><strong>Email:</strong> support@simplon.com</p>
+            <p><strong>Phone:</strong> +92 9876543210</p>
+            
+            <a href="#" class="footer-button">
+                Get Directions / View Map
+            </a>
+            
+            <a href="#" class="footer-link-clean">
+                View All Shop Locations
+            </a>
+        </div>
+
+        <div class="footer-col">
+            <h3>Product Categories</h3>
+            <ul class="clean-list">
+                <li><a href="#" class="footer-link-clean">Hair, Skin, Make-Up Kits</a></li>
+                <li><a href="#" class="footer-link-clean">Nail Paints, Nail Arts</a></li>
+                <li><a href="#" class="footer-link-clean">Jewellery, Wedding Kits</a></li>
+                <li><a href="#" class="footer-link-clean">Upcoming Products</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 SIMPLON Beauty Care Centre. All rights reserved.</p>
+    </div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const sliderWrapper = document.getElementById('slider-wrapper');
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        const offset = index * -100 / totalSlides;
+        sliderWrapper.style.transform = `translateX(${offset}%)`;
+
+        dots.forEach(dot => dot.classList.remove('active-dot'));
+        dots[index].classList.add('active-dot');
+
+        currentSlide = index;
+    }
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }, 5000);
+    dots.forEach(dot => {
+        dot.addEventListener('click', (event) => {
+            const index = parseInt(event.target.getAttribute('data-index'));
+            showSlide(index);
+        });
+    });
+
+    showSlide(currentSlide);
+});
+</script>
+
+</body>
+</html>

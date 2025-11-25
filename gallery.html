@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simplon</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins", sans-serif;
+}
+.top-bar{
+    width:100%;
+    background:#F4AFC5;   
+    color:white;
+    text-align:center;
+    padding:8px 0;
+    font-size:14px;
+    font-weight:500;
+}
+
+
+.navbar{
+    width:100%;
+    background:#fff;
+    padding:18px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:2px solid #F4AFC5;
+}
+.logo{
+    font-size:26px;
+    font-weight:700;
+    color:#C1697F;
+    letter-spacing:2px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.logo img{
+    width:55px;
+    border-radius:10px;
+}
+.search-box{
+    display:flex;
+    align-items:center;
+    border-bottom:2px solid #C1697F;
+    padding:5px 10px;
+    width:250px;
+}
+
+.search-box input{
+    border:none;
+    outline:none;
+    font-size:14px;
+    flex:1;
+}
+.icons{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    font-size:20px;
+    color:#333;
+    cursor:pointer;
+}
+
+.icons i:hover{
+    color:#C1697F;
+}
+
+.book-btn{
+    background:#F8D7E2;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    text-transform:uppercase;
+}
+
+.book-btn:hover{
+    background:#E5AFC1;
+}
+.menu{
+    width:100%;
+    text-align:center;
+    padding:15px 0;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    font-weight:600;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#222;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    color:#C1697F;
+    border-bottom:2px solid #C1697F;
+    padding-bottom:3px;
+}
+@media (max-width: 1050px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .search-box {
+        margin-top: 10px;
+        width: 60%;
+        justify-content: center;
+    }
+
+    .icons {
+        margin-top: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .book-btn {
+        padding: 8px 16px;
+    }
+}
+@media (max-width: 768px) {
+    .logo {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .search-box {
+        width: 80%;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 10px 0;
+    }
+}
+@media (max-width: 500px) {
+    .navbar {
+        padding: 12px 10px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .icons {
+        gap: 15px;
+        font-size: 18px;
+    }
+
+    .menu {
+        gap: 15px;
+        font-size: 13px;
+    }
+
+    .logo img {
+        width: 45px;
+    }
+}
+.menu .dropdown {
+    position: relative;
+}
+.menu .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 10;
+    top: 100%;
+    left: 0;
+    border-radius: 5px;
+}
+.menu .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.menu .dropdown-content a {
+    color: #222;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.menu .dropdown-content a:hover {
+    background-color: #F8D7E2;
+    color: black;
+}
+
+</style>
+</head>
+<body>
+<div class="top-bar">
+ <p>Welcome to NAH Beauty Care | Free Shipping on Orders</p>
+</div>
+<header class="navbar">
+    <div class="logo">
+        <img src="https://img.freepik.com/premium-vector/beauty-parlour-logo-design_1023984-34389.jpg">
+        BEAUTY STUDIO
+    </div>
+    <div class="search-box">
+        <input type="text" placeholder="Search">
+        🔍
+    </div>
+
+    <div class="icons">
+        👤
+        🛒
+        <button class="book-btn">Book Appointment</button>
+    </div>
+
+</header>
+<nav class="menu">
+    <a href="Home.html">Home</a>
+
+    <div class="dropdown">
+        <a href="#" class="dropbtn">Products ⌵</a>
+        <div class="dropdown-content">
+            <a href="mens.html">Men's</a>
+            <a href="womens.html">Women's</a>
+        </div>
+    </div>
+
+     <a href="Wedding Kits.html">Wedding Kits</a>
+    <a href="up coming product.html">Up Coming Products</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="about us.html">About us</a>
+    <a href="contact us.html">Contact us</a>
+    <a href="kids and baby care.html">Kids & Baby Care</a>
+</nav>
+
+</body>
+</html>
