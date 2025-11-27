@@ -6,203 +6,502 @@
 <title>Simplon</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Poppins", sans-serif;
-}
-.top-bar{
-    width:100%;
-    background:#F4AFC5;   
-    color:white;
-    text-align:center;
-    padding:8px 0;
-    font-size:14px;
-    font-weight:500;
-}
-
-
-.navbar{
-    width:100%;
-    background:#fff;
-    padding:18px 40px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    border-bottom:2px solid #F4AFC5;
-}
-.logo{
-    font-size:26px;
-    font-weight:700;
-    color:#C1697F;
-    letter-spacing:2px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
-
-.logo img{
-    width:55px;
-    border-radius:10px;
-}
-.search-box{
-    display:flex;
-    align-items:center;
-    border-bottom:2px solid #C1697F;
-    padding:5px 10px;
-    width:250px;
-}
-
-.search-box input{
-    border:none;
-    outline:none;
-    font-size:14px;
-    flex:1;
-}
-.icons{
-    display:flex;
-    align-items:center;
-    gap:20px;
-    font-size:20px;
-    color:#333;
-    cursor:pointer;
-}
-
-.icons i:hover{
-    color:#C1697F;
-}
-
-.book-btn{
-    background:#F8D7E2;
-    border:none;
-    padding:10px 20px;
-    border-radius:5px;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.3s;
-    text-transform:uppercase;
-}
-
-.book-btn:hover{
-    background:#E5AFC1;
-}
-.menu{
-    width:100%;
-    text-align:center;
-    padding:15px 0;
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    font-weight:600;
-}
-
-.menu a{
-    text-decoration:none;
-    color:#222;
-    transition:0.3s;
-}
-
-.menu a:hover{
-    color:#C1697F;
-    border-bottom:2px solid #C1697F;
-    padding-bottom:3px;
-}
-@media (max-width: 1050px) {
-    .navbar {
-        flex-wrap: wrap;
-        padding: 15px 20px;
-        text-align: center;
+     *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:"Poppins", sans-serif; 
     }
 
-    .search-box {
-        margin-top: 10px;
-        width: 60%;
-        justify-content: center;
+
+    .top-bar{
+        width:100%;
+        background:#F4AFC5;
+        color:black;
+        text-align:center;
+        padding:8px 0;
+        font-size:14px;
+        font-weight:500;
     }
 
-    .icons {
-        margin-top: 10px;
-        justify-content: center;
-        width: 100%;
+    .navbar{
+        width:100%;
+        background:#fff;
+        padding:18px 40px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        border-bottom:2px solid #F4AFC5;
+    }
+    .logo{
+        font-size:26px;
+        font-weight:700;
+        color:#C1697F; 
+        letter-spacing:2px;
+        display:flex;
+        align-items:center;
+        gap:8px;
     }
 
-    .book-btn {
-        padding: 8px 16px;
+    .logo img{
+        width:55px;
+        border-radius:10px;
     }
+    .search-box{
+        display:flex;
+        align-items:center;
+        border-bottom:2px solid #C1697F;
+        padding:5px 10px;
+        width:250px;
+    }
+
+    .search-box input{
+        border:none;
+        outline:none;
+        font-size:14px;
+        flex:1;
+    }
+    .icons{
+        display:flex;
+        align-items:center;
+        gap:20px;
+        font-size:20px;
+        color:#333;
+        cursor:pointer;
+    }
+
+    .icons i:hover{
+        color:#C1697F;
+    }
+
+    .book-btn{
+        background:#F4AFC5;
+        border:none;
+        padding:10px 20px;
+        border-radius:5px;
+        font-weight:600;
+        cursor:pointer;
+        transition:0.3s;
+        text-transform:uppercase;
+        color: #333; 
+    }
+
+    .book-btn:hover{
+        background:#C1697F;
+        color: white;
+    }
+    .menu{
+        width:100%;
+        text-align:center;
+        padding:15px 0;
+        display:flex;
+        justify-content:center;
+        gap:40px;
+        font-weight:600;
+    }
+
+    .menu a{
+        text-decoration:none;
+        color:#222;
+        transition:0.3s;
+    }
+
+    .menu a:hover{
+        color:#C1697F;
+        border-bottom:2px solid #C1697F;
+        padding-bottom:3px;
+    }
+    @media (max-width: 1050px) {
+        .navbar {
+            flex-wrap: wrap;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .search-box {
+            margin-top: 10px;
+            width: 60%;
+            justify-content: center;
+        }
+
+        .icons {
+            margin-top: 10px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .book-btn {
+            padding: 8px 16px;
+        }
+    }
+    @media (max-width: 768px) {
+        .logo {
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .search-box {
+            width: 80%;
+        }
+
+        .menu {
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 10px 0;
+        }
+    }
+    @media (max-width: 500px) {
+        .navbar {
+            padding: 12px 10px;
+        }
+
+        .search-box {
+            width: 100%;
+        }
+
+        .icons {
+            gap: 15px;
+            font-size: 18px;
+        }
+
+        .menu {
+            gap: 15px;
+            font-size: 13px;
+        }
+
+        .logo img {
+            width: 45px;
+        }
+    }
+    .menu .dropdown {
+        position: relative;
+    }
+    .menu .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 150px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 10;
+        top: 100%;
+        left: 0;
+        border-radius: 5px;
+    }
+    .menu .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .menu .dropdown-content a {
+        color: #222;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: block;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .menu .dropdown-content a:hover {
+        background-color: #F4AFC5; 
+        color: #C1697F; 
+    }
+.section-slider {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 15px; 
+    text-align: center;
 }
-@media (max-width: 768px) {
-    .logo {
-        width: 100%;
-        justify-content: center;
-        margin-bottom: 10px;
-    }
 
-    .search-box {
-        width: 80%;
-    }
-
-    .menu {
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 10px 0;
-    }
+.section-slider h2 {
+    font-size: 32px;
+    color: #C1697F;
+    margin-bottom: 30px;
+    font-family: sans-serif;
 }
-@media (max-width: 500px) {
-    .navbar {
-        padding: 12px 10px;
-    }
 
-    .search-box {
-        width: 100%;
-    }
-
-    .icons {
-        gap: 15px;
-        font-size: 18px;
-    }
-
-    .menu {
-        gap: 15px;
-        font-size: 13px;
-    }
-
-    .logo img {
-        width: 45px;
-    }
-}
-.menu .dropdown {
+.slider-container {
     position: relative;
-}
-.menu .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 150px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 10;
-    top: 100%;
-    left: 0;
-    border-radius: 5px;
-}
-.menu .dropdown:hover .dropdown-content {
-    display: block;
+    background: #C1697F;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden; 
 }
 
-.menu .dropdown-content a {
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%;
+}
+
+.slide {
+    flex: 0 0 33.33%;
+    height: 450px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slide-content {
+    width: 45%;
+    padding-left: 50px;
+    text-align: left;
+    font-family: sans-serif;
+}
+
+.slide-content h3 {
+    font-size: 34px;
     color: #222;
-    padding: 10px 15px;
+    margin: 0;
+}
+
+.slide-content p {
+    color: #555;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.para{
+    font-size: 20px;
+    font-weight: 700;
+    color: #C1697F;
+    margin: 12px 0 25px 0;
+}
+
+.slider-a{
+    display: inline-block;
+    background: #E7B7C8;
+    color: #222;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
     text-decoration: none;
-    display: block;
-    font-weight: 500;
     transition: 0.3s;
 }
 
-.menu .dropdown-content a:hover {
-    background-color: #F8D7E2;
-    color: black;
+.slider-a:hover {
+    background: #DFA8B8;
 }
 
+.slide-media {
+    width: 55%;
+    height: 100%;
+    background: #DFA8B8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+}
+
+.slide-media img,
+.slide-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.slider-dots {
+    margin-top: 20px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active-dot {
+    background: #C1697F;
+}
+
+@media (max-width: 768px) {
+    .simlon-product-slider {
+        padding: 0 10px;
+    }
+
+    .slide {
+        flex-direction: column;
+        height: auto;
+        min-height: 400px;
+        padding: 15px 0 25px 0; 
+    }
+    
+    .slide-content {
+        width: 100%;
+        padding: 10px 15px;
+        text-align: center;
+        order: 2;
+    }
+
+    .slide-media {
+        width: 100%;
+        height: 220px;
+        order: 1;
+    }
+    
+    .slide-content h3 {
+        font-size: 24px; 
+    }
+}
+    .footer {
+        position: relative;
+        background: #F4AFC5; 
+        color: black;
+        margin-top: 80px;
+        overflow: hidden;
+        border-top: 8px solid #9A5465; 
+    }
+
+    .footer-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 40px 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+    }
+
+    .footer-col {
+        opacity: 1;
+    }
+
+    .footer-heading {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-desc {
+        line-height: 1.8;
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        border: 2px solid #9A5465; 
+    }
+
+    .social-icon:hover {
+        background: white;
+        color: #C1697F; 
+        transform: scale(1.1);
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color:black;
+        text-decoration: none;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        padding: 5px 0;
+    }
+
+    .footer-links a:hover {
+        color: #C1697F; 
+        padding-left: 8px;
+    }
+
+    .footer-contact {
+        list-style: none;
+    }
+
+    .footer-contact li {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .contact-icon {
+        font-size: 24px;
+        color: white;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .contact-info strong {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .contact-info a {
+        color: black;
+        text-decoration: none;
+        font-size: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .contact-info a:hover {
+        color: #C1697F; 
+    }
+
+    .footer-bottom {
+        background: #F4AFC5;
+        padding: 25px 40px;
+        margin-top: 40px;
+        border-top: 1px solid #C1697F; 
+    }
+
+    .footer-bottom-content {
+        max-width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .copyright {
+        font-size: 14px;
+        color: black;
+    }
 </style>
 </head>
 <body>
@@ -228,23 +527,75 @@
 </header>
 <nav class="menu">
     <a href="Home.html">Home</a>
-
-    <div class="dropdown">
-        <a href="#" class="dropbtn">Products ⌵</a>
-        <div class="dropdown-content">
-            <a href="mens.html">Men's</a>
-            <a href="womens.html">Women's</a>
-        </div>
-    </div>
-
-     <a href="Wedding Kits.html">Wedding Kits</a>
-    <a href="up coming product.html">Up Coming Products</a>
+    <a href="product.html">Products</a>
+    <a href="Wedding Kits.html">Wedding Kits</a>
     <a href="gallery.html">Gallery</a>
     <a href="feedback.html">Feedback</a>
     <a href="about us.html">About us</a>
     <a href="contact us.html">Contact us</a>
     <a href="kids and baby care.html">Kids & Baby Care</a>
 </nav>
+   <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 class="footer-heading">About Beauty Studio</h3>
+                    <p class="footer-desc">Discover the best beauty treatments, skincare routines, and premium services.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
 
+                <div class="footer-col">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="Home.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+                        <li><a href="gallery.html"><i class="bi bi-chevron-right"></i> Gallery</a></li>
+                        <li><a href="about us.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
+                        <li><a href="contact us.html"><i class="bi bi-chevron-right"></i> Contact us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Facial & Skin Care</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Makeup Services</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Hair Treatments</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Bridal Packages</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="bi bi-telephone-fill contact-icon"></i>
+                            <div class="contact-info">
+                                <strong>Phone</strong>
+                                <a href="tel:+923231234567">(+92) 323-12345</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope-fill contact-icon"></i>
+                            <div class="contact-info">
+                                <strong>Email</strong>
+                                <a href="mailto:info@beautystudio.pk">info@beautystudio.pk</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">&copy; 2025 Beauty Studio. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

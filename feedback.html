@@ -1,213 +1,1084 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simplon</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Beauty Studio</title>
+    </head>
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Poppins", sans-serif;
-}
-.top-bar{
-    width:100%;
-    background:#F4AFC5;   
-    color:white;
-    text-align:center;
-    padding:8px 0;
-    font-size:14px;
-    font-weight:500;
-}
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:"Poppins", sans-serif; 
+    }
 
 
-.navbar{
-    width:100%;
-    background:#fff;
-    padding:18px 40px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    border-bottom:2px solid #F4AFC5;
-}
-.logo{
-    font-size:26px;
-    font-weight:700;
-    color:#C1697F;
-    letter-spacing:2px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
+    .top-bar{
+        width:100%;
+        background:#F4AFC5;
+        color:black;
+        text-align:center;
+        padding:8px 0;
+        font-size:14px;
+        font-weight:500;
+    }
 
-.logo img{
-    width:55px;
-    border-radius:10px;
-}
-.search-box{
-    display:flex;
-    align-items:center;
-    border-bottom:2px solid #C1697F;
-    padding:5px 10px;
-    width:250px;
-}
+    .navbar{
+        width:100%;
+        background:#fff;
+        padding:18px 40px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        border-bottom:2px solid #F4AFC5;
+    }
+    .logo{
+        font-size:26px;
+        font-weight:700;
+        color:#C1697F; 
+        letter-spacing:2px;
+        display:flex;
+        align-items:center;
+        gap:8px;
+    }
 
-.search-box input{
-    border:none;
-    outline:none;
-    font-size:14px;
-    flex:1;
-}
-.icons{
-    display:flex;
-    align-items:center;
-    gap:20px;
-    font-size:20px;
-    color:#333;
-    cursor:pointer;
-}
+    .logo img{
+        width:55px;
+        border-radius:10px;
+    }
+    .search-box{
+        display:flex;
+        align-items:center;
+        border-bottom:2px solid #C1697F;
+        padding:5px 10px;
+        width:250px;
+    }
 
-.icons i:hover{
-    color:#C1697F;
-}
+    .search-box input{
+        border:none;
+        outline:none;
+        font-size:14px;
+        flex:1;
+    }
+    .icons{
+        display:flex;
+        align-items:center;
+        gap:20px;
+        font-size:20px;
+        color:#333;
+        cursor:pointer;
+    }
 
-.book-btn{
-    background:#F8D7E2;
-    border:none;
-    padding:10px 20px;
-    border-radius:5px;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.3s;
-    text-transform:uppercase;
-}
+    .icons i:hover{
+        color:#C1697F;
+    }
 
-.book-btn:hover{
-    background:#E5AFC1;
-}
-.menu{
-    width:100%;
-    text-align:center;
-    padding:15px 0;
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    font-weight:600;
-}
+    .book-btn{
+        background:#F4AFC5;
+        border:none;
+        padding:10px 20px;
+        border-radius:5px;
+        font-weight:600;
+        cursor:pointer;
+        transition:0.3s;
+        text-transform:uppercase;
+        color: #333; 
+    }
 
-.menu a{
-    text-decoration:none;
-    color:#222;
-    transition:0.3s;
-}
+    .book-btn:hover{
+        background:#C1697F;
+        color: white;
+    }
+    .menu{
+        width:100%;
+        text-align:center;
+        padding:15px 0;
+        display:flex;
+        justify-content:center;
+        gap:40px;
+        font-weight:600;
+    }
 
-.menu a:hover{
-    color:#C1697F;
-    border-bottom:2px solid #C1697F;
-    padding-bottom:3px;
-}
-@media (max-width: 1050px) {
-    .navbar {
-        flex-wrap: wrap;
-        padding: 15px 20px;
+    .menu a{
+        text-decoration:none;
+        color:#222;
+        transition:0.3s;
+    }
+
+    .menu a:hover{
+        color:#C1697F;
+        border-bottom:2px solid #C1697F;
+        padding-bottom:3px;
+    }
+    @media (max-width: 1050px) {
+        .navbar {
+            flex-wrap: wrap;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .search-box {
+            margin-top: 10px;
+            width: 60%;
+            justify-content: center;
+        }
+
+        .icons {
+            margin-top: 10px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .book-btn {
+            padding: 8px 16px;
+        }
+    }
+    @media (max-width: 768px) {
+        .logo {
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .search-box {
+            width: 80%;
+        }
+
+        .menu {
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 10px 0;
+        }
+    }
+    @media (max-width: 500px) {
+        .navbar {
+            padding: 12px 10px;
+        }
+
+        .search-box {
+            width: 100%;
+        }
+
+        .icons {
+            gap: 15px;
+            font-size: 18px;
+        }
+
+        .menu {
+            gap: 15px;
+            font-size: 13px;
+        }
+
+        .logo img {
+            width: 45px;
+        }
+    }
+    .menu .dropdown {
+        position: relative;
+    }
+    .menu .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 150px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 10;
+        top: 100%;
+        left: 0;
+        border-radius: 5px;
+    }
+    .menu .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .menu .dropdown-content a {
+        color: #222;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: block;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .menu .dropdown-content a:hover {
+        background-color: #F4AFC5; 
+        color: #C1697F; 
+    }
+
+    .feedback-hero {
+        background:#C1697F;
+        padding: 80px 20px;
         text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
     }
 
-    .search-box {
-        margin-top: 10px;
-        width: 60%;
-        justify-content: center;
+    .feedback-hero h1 {
+        font-size: 48px;
+        margin-bottom: 15px;
+        position: relative;
     }
 
-    .icons {
-        margin-top: 10px;
-        justify-content: center;
+    .feedback-hero p {
+        font-size: 18px;
+        opacity: 0.95;
+        position: relative;
+    }
+
+    .feedback-container {
+        max-width: 800px;
+        margin: -60px auto 80px;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .feedback-card {
+        background: white;
+        border-radius: 20px;
+        padding: 50px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .feedback-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .form-group {
+        margin-bottom: 30px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        color: #C1697F; 
+        margin-bottom: 10px;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
         width: 100%;
+        padding: 15px 20px;
+        border: 2px solid #e0e0e0;
+        border-radius: 12px;
+        font-size: 15px;
+        transition: all 0.3s ease;
+        font-family: sans-serif;
     }
 
-    .book-btn {
-        padding: 8px 16px;
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: #C1697F;
     }
-}
-@media (max-width: 768px) {
-    .logo {
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .rating-group {
+        margin-bottom: 30px;
+    }
+
+    .rating-group label {
+        display: block;
+        font-weight: bold;
+        color: #C1697F; 
+        margin-bottom: 15px;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .star-rating {
+        display: flex;
+        gap: 10px;
+        font-size: 40px;
+    }
+
+    .star {
+        cursor: pointer;
+        color: #ddd;
+        transition: all 0.2s ease;
+    }
+
+    .star:hover,
+    .star.active {
+        color: gold; 
+        transform: scale(1.2);
+    }
+
+    .radio-group {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .radio-option {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .radio-option input[type="radio"] {
+        display: none;
+    }
+
+    .radio-option label {
+        display: block;
+        padding: 15px 20px;
+        border: 2px solid #e0e0e0;
+        border-radius: 12px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: none;
+        letter-spacing: normal;
+        color: #333; 
+    }
+
+    .radio-option input[type="radio"]:checked + label {
+        background: #C1697F; 
+        color: white;
+        border-color: #C1697F; 
+        transform: scale(1.05);
+    }
+
+    .radio-option label:hover {
+        border-color: #C1697F;
+    }
+
+    .submit-btn {
         width: 100%;
-        justify-content: center;
+        padding: 18px;
+        background: #C1697F; 
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+        background: #9A5465;
+        transform: translateY(-2px);
+    }
+
+    .submit-btn:active {
+        transform: translateY(0);
+    }
+
+    .success-message {
+        display: none;
+        background: #C1697F; 
+        color: white;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        margin-bottom: 20px;
+        animation: slideDown 0.5s ease;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .checkbox-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .checkbox-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .checkbox-option input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        accent-color: #C1697F;
+    }
+
+    .checkbox-option label {
+        margin: 0;
+        cursor: pointer;
+        text-transform: none;
+        letter-spacing: normal;
+        font-weight: normal;
+        color: #333; 
+    }
+    .feedbacks-display-container {
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+
+    .feedbacks-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .feedbacks-header h2 {
+        font-size: 36px;
+        color: #C1697F;
         margin-bottom: 10px;
     }
 
-    .search-box {
-        width: 80%;
+    .feedbacks-header p {
+        font-size: 16px;
+        color: #666;
     }
 
-    .menu {
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 10px 0;
-    }
-}
-@media (max-width: 500px) {
-    .navbar {
-        padding: 12px 10px;
+    .feedbacks-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
     }
 
-    .search-box {
-        width: 100%;
+    .feedback-item {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        animation: fadeIn 0.5s ease;
     }
 
-    .icons {
-        gap: 15px;
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .feedback-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .feedback-header-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #f0f0f0;
+    }
+
+    .feedback-user {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .user-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #C1697F;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .user-details h4 {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 3px;
+    }
+
+    .user-details .feedback-date {
+        font-size: 12px;
+        color: #999;
+    }
+
+    .feedback-rating {
+        display: flex;
+        gap: 3px;
+    }
+
+    .feedback-rating .star {
         font-size: 18px;
+        color: gold;
     }
 
-    .menu {
-        gap: 15px;
+    .feedback-beach {
+        display: inline-block;
+        background: #F4AFC5;
+        padding: 8px 15px;
+        border-radius: 20px;
         font-size: 13px;
+        color: #C1697F; 
+        font-weight: bold;
+        margin-bottom: 15px;
     }
 
-    .logo img {
-        width: 45px;
+    .feedback-beach i {
+        margin-right: 5px;
     }
+
+    .feedback-comments {
+        color: #555;
+        line-height: 1.6;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .feedback-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .meta-tag {
+        background: #f0f0f0;
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-size: 12px;
+        color: #666;
+    }
+
+    .meta-tag i {
+        margin-right: 5px;
+        color: #C1697F;
+    }
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:"Poppins", sans-serif; 
+    }
+
+
+    .top-bar{
+        width:100%;
+        background:#C1697F;
+        color:white;
+        text-align:center;
+        padding:8px 0;
+        font-size:14px;
+        font-weight:500;
+    }
+
+    .navbar{
+        width:100%;
+        background:#fff;
+        padding:18px 40px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        border-bottom:2px solid #F4AFC5;
+    }
+    .logo{
+        font-size:26px;
+        font-weight:700;
+        color:#C1697F; 
+        letter-spacing:2px;
+        display:flex;
+        align-items:center;
+        gap:8px;
+    }
+
+    .logo img{
+        width:55px;
+        border-radius:10px;
+    }
+    .search-box{
+        display:flex;
+        align-items:center;
+        border-bottom:2px solid #C1697F;
+        padding:5px 10px;
+        width:250px;
+    }
+
+    .search-box input{
+        border:none;
+        outline:none;
+        font-size:14px;
+        flex:1;
+    }
+    .icons{
+        display:flex;
+        align-items:center;
+        gap:20px;
+        font-size:20px;
+        color:#333;
+        cursor:pointer;
+    }
+
+    .icons i:hover{
+        color:#C1697F;
+    }
+
+    .book-btn{
+        background:#F2C9D6;
+        border:none;
+        padding:10px 20px;
+        border-radius:5px;
+        font-weight:600;
+        cursor:pointer;
+        transition:0.3s;
+        text-transform:uppercase;
+        color: #333; 
+    }
+
+    .book-btn:hover{
+        background:#C1697F;
+        color: white;
+    }
+    .menu{
+        width:100%;
+        text-align:center;
+        padding:15px 0;
+        display:flex;
+        justify-content:center;
+        gap:40px;
+        font-weight:600;
+    }
+
+    .menu a{
+        text-decoration:none;
+        color:#222;
+        transition:0.3s;
+    }
+
+    .menu a:hover{
+        color:#C1697F;
+        border-bottom:2px solid #C1697F;
+        padding-bottom:3px;
+    }
+    @media (max-width: 1050px) {
+        .navbar {
+            flex-wrap: wrap;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .search-box {
+            margin-top: 10px;
+            width: 60%;
+            justify-content: center;
+        }
+
+        .icons {
+            margin-top: 10px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .book-btn {
+            padding: 8px 16px;
+        }
+    }
+    @media (max-width: 768px) {
+        .logo {
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .search-box {
+            width: 80%;
+        }
+
+        .menu {
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 10px 0;
+        }
+    }
+    @media (max-width: 500px) {
+        .navbar {
+            padding: 12px 10px;
+        }
+
+        .search-box {
+            width: 100%;
+        }
+
+        .icons {
+            gap: 15px;
+            font-size: 18px;
+        }
+
+        .menu {
+            gap: 15px;
+            font-size: 13px;
+        }
+
+        .logo img {
+            width: 45px;
+        }
+    }
+    .menu .dropdown {
+        position: relative;
+    }
+    .menu .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 150px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 10;
+        top: 100%;
+        left: 0;
+        border-radius: 5px;
+    }
+    .menu .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .menu .dropdown-content a {
+        color: #222;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: block;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .menu .dropdown-content a:hover {
+        background-color: #F4AFC5; 
+        color: #C1697F; 
+    }
+.section-slider {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 15px; 
+    text-align: center;
 }
-.menu .dropdown {
+
+.section-slider h2 {
+    font-size: 32px;
+    color: #C1697F;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+}
+
+.slider-container {
     position: relative;
-}
-.menu .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 150px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 10;
-    top: 100%;
-    left: 0;
-    border-radius: 5px;
-}
-.menu .dropdown:hover .dropdown-content {
-    display: block;
+    background: #C1697F;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden; 
 }
 
-.menu .dropdown-content a {
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%;
+}
+
+.slide {
+    flex: 0 0 33.33%;
+    height: 450px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slide-content {
+    width: 45%;
+    padding-left: 50px;
+    text-align: left;
+    font-family: sans-serif;
+}
+
+.slide-content h3 {
+    font-size: 34px;
     color: #222;
-    padding: 10px 15px;
+    margin: 0;
+}
+
+.slide-content p {
+    color: #555;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.para{
+    font-size: 20px;
+    font-weight: 700;
+    color: #C1697F;
+    margin: 12px 0 25px 0;
+}
+
+.slider-a{
+    display: inline-block;
+    background: #E7B7C8;
+    color: #222;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
     text-decoration: none;
-    display: block;
-    font-weight: 500;
     transition: 0.3s;
 }
 
-.menu .dropdown-content a:hover {
-    background-color: #F8D7E2;
-    color: black;
+.slider-a:hover {
+    background: #DFA8B8;
 }
 
+.slide-media {
+    width: 55%;
+    height: 100%;
+    background: #DFA8B8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+}
+
+.slide-media img,
+.slide-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.slider-dots {
+    margin-top: 20px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active-dot {
+    background: #C1697F;
+}
+
+@media (max-width: 768px) {
+    .simlon-product-slider {
+        padding: 0 10px;
+    }
+
+    .slide {
+        flex-direction: column;
+        height: auto;
+        min-height: 400px;
+        padding: 15px 0 25px 0; 
+    }
+    
+    .slide-content {
+        width: 100%;
+        padding: 10px 15px;
+        text-align: center;
+        order: 2;
+    }
+
+    .slide-media {
+        width: 100%;
+        height: 220px;
+        order: 1;
+    }
+    
+    .slide-content h3 {
+        font-size: 24px; 
+    }
+}
+    .footer {
+        position: relative;
+        background: #F4AFC5; 
+        color: black;
+        margin-top: 80px;
+        overflow: hidden;
+        border-top: 8px solid #9A5465; 
+    }
+
+    .footer-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 40px 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+    }
+
+    .footer-col {
+        opacity: 1;
+    }
+
+    .footer-heading {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-desc {
+        line-height: 1.8;
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        border: 2px solid #9A5465; 
+    }
+
+    .social-icon:hover {
+        background: white;
+        color: #C1697F; 
+        transform: scale(1.1);
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color:black;
+        text-decoration: none;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        padding: 5px 0;
+    }
+
+    .footer-links a:hover {
+        color: #C1697F; 
+        padding-left: 8px;
+    }
+
+    .footer-contact {
+        list-style: none;
+    }
+
+    .footer-contact li {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .contact-icon {
+        font-size: 24px;
+        color: white;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .contact-info strong {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .contact-info a {
+        color: black;
+        text-decoration: none;
+        font-size: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .contact-info a:hover {
+        color: #C1697F; 
+    }
+
+    .footer-bottom {
+        background: #F4AFC5;
+        padding: 25px 40px;
+        margin-top: 40px;
+        border-top: 1px solid #C1697F; 
+    }
+
+    .footer-bottom-content {
+        max-width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .copyright {
+        font-size: 14px;
+        color: black;
+    }
 </style>
-</head>
 <body>
 <div class="top-bar">
- <p>Welcome to NAH Beauty Care | Free Shipping on Orders</p>
+    <p>Welcome to NAH Beauty Care | Free Shipping on Orders</p>
 </div>
 <header class="navbar">
     <div class="logo">
@@ -228,23 +1099,418 @@
 </header>
 <nav class="menu">
     <a href="Home.html">Home</a>
-
-    <div class="dropdown">
-        <a href="#" class="dropbtn">Products ⌵</a>
-        <div class="dropdown-content">
-            <a href="mens.html">Men's</a>
-            <a href="womens.html">Women's</a>
-        </div>
-    </div>
-
+    <a href="product.html">Products</a>
     <a href="Wedding Kits.html">Wedding Kits</a>
-    <a href="up coming product.html">Up Coming Products</a>
     <a href="gallery.html">Gallery</a>
     <a href="feedback.html">Feedback</a>
     <a href="about us.html">About us</a>
     <a href="contact us.html">Contact us</a>
     <a href="kids and baby care.html">Kids & Baby Care</a>
 </nav>
+    <section class="feedback-hero">
+        <h1><i class="bi bi-chat-heart-fill"></i> Share Your Feedback</h1>
+        <p>We value your opinion! Help us improve your beauty care experience.</p>
+    </section>
+    <div class="feedback-container">
+        <div class="feedback-card">
+            <div class="success-message" id="successMessage">
+                <i class="bi bi-check-circle-fill"></i> Thank you for your feedback! We appreciate your time.
+            </div>
 
+            <form id="feedbackForm" onsubmit="return submitForm()">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName"><i class="bi bi-person-fill"></i> First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName"><i class="bi bi-person-fill"></i> Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email"><i class="bi bi-envelope-fill"></i> Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone"><i class="bi bi-telephone-fill"></i> Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+92 300 1234567">
+                    </div>
+                </div>
+
+                <div class="rating-group">
+                    <label><i class="bi bi-star-fill"></i> Overall Experience *</label>
+                    <div class="star-rating" id="starRating" onmouseleave="leaveStar()">
+                        <span class="star" id="star1" onclick="clickStar(1)" onmouseenter="hoverStar(1)">★</span>
+                        <span class="star" id="star2" onclick="clickStar(2)" onmouseenter="hoverStar(2)">★</span>
+                        <span class="star" id="star3" onclick="clickStar(3)" onmouseenter="hoverStar(3)">★</span>
+                        <span class="star" id="star4" onclick="clickStar(4)" onmouseenter="hoverStar(4)">★</span>
+                        <span class="star" id="star5" onclick="clickStar(5)" onmouseenter="hoverStar(5)">★</span>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" required>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="bi bi-tag-fill"></i> Which Product Did You Use? *</label>
+                    <select id="beach" name="beach" required>
+                        <option value="">Select a Product Category</option>
+                        <option value="skin_care">Skin Care Products</option>
+                        <option value="hair_care">Hair Care Products</option>
+                        <option value="makeup">Makeup Products</option>
+                        <option value="tools">Tools & Accessories</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service"><i class="bi bi-scissors"></i> Which Service Did You Use?</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select Service</option>
+                        <option value="Facial">Facial</option>
+                        <option value="Makeup">Makeup</option>
+                        <option value="Hair Treatment">Hair Treatment</option>
+                        <option value="Skin Care">Skin Consultation</option>
+                        <option value="Bridal Service">Bridal Service</option>
+                        <option value="Waxing">Waxing</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="bi bi-heart-fill"></i> What Did You Enjoy Most?</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="scenery" name="enjoyed" value="Quality of Service">
+                            <label for="scenery">Quality of Service</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="cleanliness" name="enjoyed" value="Staff Friendliness">
+                            <label for="cleanliness">Staff Friendliness</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="facilities" name="enjoyed" value="Ambiance">
+                            <label for="facilities">Salon Ambiance</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="accessibility" name="enjoyed" value="Product Effectiveness">
+                            <label for="accessibility">Product Effectiveness</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="activities" name="enjoyed" value="Value for Money">
+                            <label for="activities">Value for Money</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comments"><i class="bi bi-chat-dots-fill"></i> Additional Comments</label>
+                    <textarea id="comments" name="comments" placeholder="Share your thoughts, suggestions, or any issues you encountered..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="bi bi-hand-thumbs-up-fill"></i> Would You Recommend Us?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="definitely" name="recommend" value="Definitely">
+                            <label for="definitely">Definitely</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="probably" name="recommend" value="Probably">
+                            <label for="probably">Probably</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="maybe" name="recommend" value="Maybe">
+                            <label for="maybe">Maybe</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="unlikely" name="recommend" value="Unlikely">
+                            <label for="unlikely">Unlikely</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="bi bi-send-fill"></i> Submit Feedback
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <section class="feedbacks-display-container">
+        <div class="feedbacks-header">
+            <h2>Recent Customer Reviews <i class="bi bi-star-half"></i></h2>
+            <p>See what others are saying about their Beauty Studio experience.</p>
+        </div>
+        <div class="feedbacks-list" id="feedbacksList">
+            </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 class="footer-heading">About Beauty Studio</h3>
+                    <p class="footer-desc">Discover the best beauty treatments, skincare routines, and premium services.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="Home.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+                        <li><a href="gallery.html"><i class="bi bi-chevron-right"></i> Gallery</a></li>
+                        <li><a href="about us.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
+                        <li><a href="contact us.html"><i class="bi bi-chevron-right"></i> Contact us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Facial & Skin Care</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Makeup Services</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Hair Treatments</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Bridal Packages</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="bi bi-telephone-fill contact-icon"></i>
+                            <div class="contact-info">
+                                <strong>Phone</strong>
+                                <a href="tel:+923231234567">(+92) 323-12345</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope-fill contact-icon"></i>
+                            <div class="contact-info">
+                                <strong>Email</strong>
+                                <a href="mailto:info@beautystudio.pk">info@beautystudio.pk</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">&copy; 2025 Beauty Studio. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+var selectedRating = 0;
+var feedbacks = [];
+
+function clickStar(starNumber) {
+    selectedRating = starNumber;
+    document.getElementById('rating').value = starNumber;
+    makeStarsGold(starNumber);
+}
+
+function hoverStar(starNumber) {
+    makeStarsGold(starNumber);
+}
+
+function leaveStar() {
+    makeStarsGold(selectedRating);
+}
+
+function makeStarsGold(number) {
+    var stars = ['star1', 'star2', 'star3', 'star4', 'star5'];
+    
+    stars.forEach(function(starId, index) {
+        var star = document.getElementById(starId);
+        if (index < number) {
+            star.classList.add('active');
+        } else {
+            star.classList.remove('active');
+        }
+    });
+}
+
+function getEnjoyedItems() {
+    var enjoyed = [];
+    var checkboxes = document.querySelectorAll('input[name="enjoyed"]:checked');
+    checkboxes.forEach(function(checkbox) {
+        var label = document.querySelector('label[for="' + checkbox.id + '"]').textContent;
+        enjoyed.push(label.trim());
+    });
+    return enjoyed;
+}
+
+function formatDate(date) {
+    var d = new Date(date);
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+}
+function getProductName(value) {
+    var productNames = {
+        'skin_care': 'Skin Care Products',
+        'hair_care': 'Hair Care Products',
+        'makeup': 'Makeup Products',
+        'tools': 'Tools & Accessories',
+        'other': 'Other Product'
+    };
+    return productNames[value] || value;
+}
+
+function displayFeedbacks() {
+    var feedbacksList = document.getElementById('feedbacksList');
+    
+    if (!feedbacksList) return; 
+
+    if (feedbacks.length === 0) {
+        feedbacksList.innerHTML = `
+            <div class="feedback-item no-feedbacks" style="grid-column: 1 / -1; text-align: center; padding: 50px;">
+                <i class="bi bi-chat-left-text" style="font-size: 30px; color: #C1697F;"></i>
+                <p style="margin-top: 10px;">No reviews yet. Be the first to share your experience!</p>
+            </div>
+        `;
+        return;
+    }
+    
+    feedbacksList.innerHTML = '';
+    
+    for (var i = feedbacks.length - 1; i >= 0; i--) {
+        var feedback = feedbacks[i];
+        var feedbackCard = createFeedbackCard(feedback);
+        feedbacksList.innerHTML += feedbackCard;
+    }
+}
+
+function createFeedbackCard(feedback) {
+    var initials = feedback.firstName.charAt(0).toUpperCase() + feedback.lastName.charAt(0).toUpperCase();
+    var stars = '';
+    
+    for (var i = 0; i < 5; i++) {
+        if (i < feedback.rating) {
+            stars += '<span class="star">★</span>';
+        } else {
+            stars += '<span class="star" style="color:#ddd">★</span>';
+        }
+    }
+    
+    var enjoyedTags = '';
+    if (feedback.enjoyed && feedback.enjoyed.length > 0) {
+        feedback.enjoyed.forEach(function(item) {
+            enjoyedTags += '<span class="meta-tag"><i class="bi bi-heart-fill"></i> ' + item + '</span>';
+        });
+    }
+    
+    var serviceTag = '';
+    if (feedback.service) {
+        serviceTag = '<span class="meta-tag"><i class="bi bi-scissors"></i> ' + feedback.service + '</span>';
+    }
+    
+    var recommendTag = '';
+    if (feedback.recommend) {
+        recommendTag = '<span class="meta-tag"><i class="bi bi-hand-thumbs-up"></i> ' + feedback.recommend + '</span>';
+    }
+    
+    return `
+        <div class="feedback-item">
+            <div class="feedback-header-info">
+                <div class="feedback-user">
+                    <div class="user-avatar">${initials}</div>
+                    <div class="user-details">
+                        <h4>${feedback.firstName} ${feedback.lastName}</h4>
+                        <span class="feedback-date">${formatDate(feedback.date)}</span>
+                    </div>
+                </div>
+                <div class="feedback-rating">
+                    ${stars}
+                </div>
+            </div>
+            
+            <div class="feedback-beach">
+                <i class="bi bi-tag-fill"></i>${getProductName(feedback.beach)}
+            </div>
+            
+            ${feedback.comments ? '<div class="feedback-comments">"' + feedback.comments + '"</div>' : ''}
+            
+            <div class="feedback-meta">
+                ${serviceTag}
+                ${enjoyedTags}
+                ${recommendTag}
+            </div>
+        </div>
+    `;
+}
+
+function loadFeedbacks() {
+    var stored = localStorage.getItem('beautyStudioFeedbacks');
+    if (stored) {
+        feedbacks = JSON.parse(stored);
+    }
+    displayFeedbacks();
+}
+
+function saveFeedbacks() {
+    localStorage.setItem('beautyStudioFeedbacks', JSON.stringify(feedbacks));
+}
+
+function submitForm() {
+    var ratingValue = document.getElementById('rating').value;
+    
+    if (ratingValue === '') {
+        alert('Please select a rating!');
+        return false;
+    }
+
+    var feedback = {
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        rating: parseInt(ratingValue),
+        beach: document.getElementById('beach').value, 
+        service: document.getElementById('service').value,
+        enjoyed: getEnjoyedItems(),
+        comments: document.getElementById('comments').value,
+        recommend: document.querySelector('input[name="recommend"]:checked')?.value || '',
+        date: new Date().toISOString()
+    };
+
+    feedbacks.push(feedback);
+    
+    saveFeedbacks();
+    displayFeedbacks();
+    var successMessage = document.getElementById('successMessage');
+    successMessage.style.display = 'block';
+    document.getElementById('feedbackForm').reset();
+    selectedRating = 0;
+    makeStarsGold(0);
+    
+
+    document.querySelector('.feedbacks-display-container').scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+    });
+    
+    setTimeout(function() {
+        successMessage.style.display = 'none';
+    }, 5000);
+    
+    return false;
+}
+
+window.onload = function() {
+    loadFeedbacks();
+};
+    </script>
 </body>
 </html>
