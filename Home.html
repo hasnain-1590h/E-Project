@@ -1,535 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simplon</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Studio - Your Ultimate Beauty Destination</title>
+</head>
 <style>
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-        font-family:"Poppins", sans-serif; 
-    }
-
-
-    .top-bar{
-        width:100%;
-        background:#F4AFC5;
-        color:black;
-        text-align:center;
-        padding:8px 0;
-        font-size:14px;
-        font-weight:500;
-    }
-
-    .navbar{
-        width:100%;
-        background:#fff;
-        padding:18px 40px;
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        border-bottom:2px solid #F4AFC5;
-    }
-    .logo{
-        font-size:26px;
-        font-weight:700;
-        color:#C1697F; 
-        letter-spacing:2px;
-        display:flex;
-        align-items:center;
-        gap:8px;
-    }
-
-    .logo img{
-        width:55px;
-        border-radius:10px;
-    }
-    .search-box{
-        display:flex;
-        align-items:center;
-        border-bottom:2px solid #C1697F;
-        padding:5px 10px;
-        width:250px;
-    }
-
-    .search-box input{
-        border:none;
-        outline:none;
-        font-size:14px;
-        flex:1;
-    }
-    .icons{
-        display:flex;
-        align-items:center;
-        gap:20px;
-        font-size:20px;
-        color:#333;
-        cursor:pointer;
-    }
-
-    .icons i:hover{
-        color:#C1697F;
-    }
-
-    .book-btn{
-        background:#F4AFC5;
-        border:none;
-        padding:10px 20px;
-        border-radius:5px;
-        font-weight:600;
-        cursor:pointer;
-        transition:0.3s;
-        text-transform:uppercase;
-        color: #333; 
-    }
-
-    .book-btn:hover{
-        background:#C1697F;
-        color: white;
-    }
-    .menu{
-        width:100%;
-        text-align:center;
-        padding:15px 0;
-        display:flex;
-        justify-content:center;
-        gap:40px;
-        font-weight:600;
-    }
-
-    .menu a{
-        text-decoration:none;
-        color:#222;
-        transition:0.3s;
-    }
-
-    .menu a:hover{
-        color:#C1697F;
-        border-bottom:2px solid #C1697F;
-        padding-bottom:3px;
-    }
-    @media (max-width: 1050px) {
-        .navbar {
-            flex-wrap: wrap;
-            padding: 15px 20px;
-            text-align: center;
-        }
-
-        .search-box {
-            margin-top: 10px;
-            width: 60%;
-            justify-content: center;
-        }
-
-        .icons {
-            margin-top: 10px;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .book-btn {
-            padding: 8px 16px;
-        }
-    }
-    @media (max-width: 768px) {
-        .logo {
-            width: 100%;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
-
-        .search-box {
-            width: 80%;
-        }
-
-        .menu {
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 10px 0;
-        }
-    }
-    @media (max-width: 500px) {
-        .navbar {
-            padding: 12px 10px;
-        }
-
-        .search-box {
-            width: 100%;
-        }
-
-        .icons {
-            gap: 15px;
-            font-size: 18px;
-        }
-
-        .menu {
-            gap: 15px;
-            font-size: 13px;
-        }
-
-        .logo img {
-            width: 45px;
-        }
-    }
-    .menu .dropdown {
-        position: relative;
-    }
-    .menu .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #fff;
-        min-width: 150px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        z-index: 10;
-        top: 100%;
-        left: 0;
-        border-radius: 5px;
-    }
-    .menu .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .menu .dropdown-content a {
-        color: #222;
-        padding: 10px 15px;
-        text-decoration: none;
-        display: block;
-        font-weight: 500;
-        transition: 0.3s;
-    }
-
-    .menu .dropdown-content a:hover {
-        background-color: #F4AFC5; 
-        color: #C1697F; 
-    }
-.section-slider {
-    max-width: 1300px;
-    margin: 40px auto;
-    padding: 0 15px; 
-    text-align: center;
-}
-
-.section-slider h2 {
-    font-size: 32px;
-    color: #C1697F;
-    margin-bottom: 30px;
-    font-family: sans-serif;
-}
-
-.slider-container {
-    position: relative;
-    background: #C1697F;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    overflow: hidden; 
-}
-
-.slider-wrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 300%;
-}
-
-.slide {
-    flex: 0 0 33.33%;
-    height: 450px;
-    display: flex; 
-    align-items: center;
-    justify-content: space-between;
-}
-
-.slide-content {
-    width: 45%;
-    padding-left: 50px;
-    text-align: left;
-    font-family: sans-serif;
-}
-
-.slide-content h3 {
-    font-size: 34px;
-    color: #222;
-    margin: 0;
-}
-
-.slide-content p {
-    color: #555;
-    font-size: 16px;
-    margin: 8px 0;
-}
-
-.para{
-    font-size: 20px;
-    font-weight: 700;
-    color: #C1697F;
-    margin: 12px 0 25px 0;
-}
-
-.slider-a{
-    display: inline-block;
-    background: #DFA8B8;
-    color: #222;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.slider-a:hover {
-    background: #C1697F;
-}
-
-.slide-media {
-    width: 55%;
-    height: 100%;
-    background: #DFA8B8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 18px;
-}
-
-.slide-media img,
-.slide-media video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.slider-dots {
-    margin-top: 20px;
-}
-
-.dot {
-    height: 10px;
-    width: 10px;
-    background: #ccc;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.dot.active-dot {
-    background: #C1697F;
-}
-
-@media (max-width: 768px) {
-    .simlon-product-slider {
-        padding: 0 10px;
-    }
-
-    .slide {
-        flex-direction: column;
-        height: auto;
-        min-height: 400px;
-        padding: 15px 0 25px 0; 
-    }
-    
-    .slide-content {
-        width: 100%;
-        padding: 10px 15px;
-        text-align: center;
-        order: 2;
-    }
-
-    .slide-media {
-        width: 100%;
-        height: 220px;
-        order: 1;
-    }
-    
-    .slide-content h3 {
-        font-size: 24px; 
-    }
-}* {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
+}
+.beauty-navbar {
+    width: 100%;
+    background: #ffffff;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0px 5px 20px rgba(255, 170, 200, 0.35);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-body {
+.nav-left img {
+    width: 55px;
+    border-radius: 12px;
+}
+
+.nav-left h2 {
+    color: #C1697F;
+    letter-spacing: 2px;
+}
+.nav-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     background: #fff;
-    padding: 40px;
-    animation: fadeBody 1.5s ease;
-    margin: 0;
-    padding: 0;
-    
+    padding: 8px 15px;
+    border-radius: 30px;
+    border: 2px solid #F4AFC5;
+
+    box-shadow: 0px 4px 10px rgba(255, 175, 197, 0.25);
 }
 
-@keyframes fadeBody {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.nav-search input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 200px;
+}
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 22px;
+    cursor: pointer;
 }
 
-
-
-.fade-soft {
-    opacity: 0;
-    animation: fadeInSoft 1.2s ease forwards;
+.nav-icons span:hover {
+    color: #C1697F;
+    transition: 0.3s;
 }
-
-@keyframes fadeInSoft {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.scale-hover:hover {
-    transform: scale(1.05);
-    transition: 0.4s ease;
-}
-
-
-
-.categories {
+.beauty-menu {
+width: 100%;
+    background: #ffffff;
+    padding: 28px 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin: 40px 0;
+    gap: 39px;
+    font-weight: 600;
+    box-shadow: 0px 4px 10px rgba(255, 150, 180, 0.20);
+    font-weight: bold;
+    font-size: 17px;
 }
 
-.category {
+.beauty-menu a {
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+
+.beauty-menu a:hover {
+    color: #C1697F;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #C1697F;
+}
+
+
+    .section-slider h2 {
+       font-size: 32px;
+    color: #C1697F;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+    align-items: center;
     text-align: center;
-    transition: transform .3s ease;
-    opacity: 0;
-    animation: fadeInUp 1s ease forwards;
+    padding: 24px;
+    padding-bottom: 0;
 }
 
-.category:nth-child(1){ animation-delay: .2s; }
-.category:nth-child(2){ animation-delay: .4s; }
-.category:nth-child(3){ animation-delay: .6s; }
-.category:nth-child(4){ animation-delay: .8s; }
-.category:nth-child(5){ animation-delay: 1s; }
-.category:nth-child(6){ animation-delay: 1.2s; }
+    .slider-container {
+        position: relative;
+        background: #C1697F;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+    }
 
-.category:hover {
-    transform: translateY(-10px);
-}
+    .slider-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 300%;
+    }
 
-.category img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    transition: .4s ease;
-}
+    .slide {
+        flex: 0 0 33.33%;
+        height: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-.category img:hover {
-    transform: scale(1.1);
-}
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+    .slide-content {
+        width: 45%;
+        padding-left: 50px;
+        text-align: left;
+        font-family: sans-serif;
+    }
+
+    .slide-content h3 {
+        font-size: 34px;
+        color: #222;
+        margin: 0;
+    }
+
+    .slide-content p {
+        color: #555;
+        font-size: 16px;
+        margin: 8px 0;
+    }
+
+    .para {
+        font-size: 20px;
+        font-weight: 700;
+        color: #C1697F;
+        margin: 12px 0 25px 0;
+    }
+
+    .slider-a {
+        display: inline-block;
+        background: #DFA8B8;
+        color: #222;
+        padding: 12px 25px;
+        border-radius: 5px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .slider-a:hover {
+        background: #C1697F;
+    }
+
+    .slide-media {
+        width: 55%;
+        height: 100%;
+        background: #DFA8B8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 18px;
+    }
+
+    .slide-media img,
+    .slide-media video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .slider-dots {
+        margin-top: 20px;
+        padding-left: 588px;
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+        background: #ccc;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .dot.active-dot {
+        background: #C1697F;
+    }
+
+    @media (max-width: 768px) {
+        .slide {
+            flex-direction: column;
+            height: auto;
+            min-height: 400px;
+            padding: 15px 0 25px 0;
+        }
+
+        .slide-content {
+            width: 100%;
+            padding: 10px 15px;
+            text-align: center;
+            order: 2;
+        }
+
+        .slide-media {
+            width: 100%;
+            height: 220px;
+            order: 1;
+        }
+
+        .slide-content h3 {
+            font-size: 24px;
+        }
+    }
 
 
-.booking {
-    background-color: #f1f1f1;
-    padding: 40px 20px;
-    text-align: center;
-    border-radius: 10px;
-    margin-top: 20px;
-    opacity: 0;
-    animation: fadeInSoft 1.4s ease forwards;
-}
 
-.new-on-flourish {
-    text-align: center;
-    padding: 40px 20px;
-}
+    .floating-icon {
+        position: absolute;
+        font-size: 60px;
+        animation: float 6s ease-in-out infinite;
+        opacity: 0.6;
+    }
 
-.new-services {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+    .icon-1 {
+        top: 15%;
+        left: 10%;
+        animation-delay: 0s;
+    }
 
-.service {
-    text-align: center;
-    opacity: 0;
-    animation: fadeInUp 1.2s ease forwards;
-}
+    .icon-2 {
+        top: 70%;
+        left: 15%;
+        animation-delay: 1.5s;
+    }
 
-.service:nth-child(1){ animation-delay:.3s; }
-.service:nth-child(2){ animation-delay:.5s; }
-.service:nth-child(3){ animation-delay:.7s; }
-.service:nth-child(4){ animation-delay:.9s; }
+    .icon-3 {
+        top: 20%;
+        right: 15%;
+        animation-delay: 3s;
+    }
 
-.service img {
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
-    transition: .4s;
-}
+    .icon-4 {
+        top: 65%;
+        right: 10%;
+        animation-delay: 4.5s;
+    }
 
-.service img:hover {
-    transform: scale(1.07);
-}
+    @keyframes float {
 
+        0%,
+        100% {
+            transform: translateY(0) rotate(0deg);
+        }
 
+        50% {
+            transform: translateY(-30px) rotate(10deg);
+        }
+    }
 
-.card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    overflow: hidden;
-    transition: transform .3s ease, box-shadow .3s ease;
-    opacity: 0;
-    animation: slideUp 1s ease forwards;
-}
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
 
-.card:nth-child(1){ animation-delay:.3s; }
-.card:nth-child(2){ animation-delay:.5s; }
-.card:nth-child(3){ animation-delay:.7s; }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
+    .section-title {
+        text-align: center;
+        font-size: 42px;
+        color: #C1697F;
+        margin-bottom: 50px;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 15px;
+    }
 
-.image-container img {
-    transition: transform .5s;
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: #F4AFC5;
+        border-radius: 2px;
+    }
 
-}
+    .categories-section {
+        padding: 80px 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
 
-.card:hover img {
-    transform: scale(1.08);
-}
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+    .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 35px;
+    }
 
+    .category-card {
+        background: white;
+        border-radius: 20px;
+        padding: 35px;
+        text-align: center;
+        transition: all 0.4s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        border: 2px solid transparent;
+    }
 
-.spot-card {
-    width:280px;
-    background:#fff;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
-    transition:transform .4s, box-shadow .4s;
-    animation: fadeInSoft 1.5s ease;
-}
+    .category-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(193, 105, 127, 0.3);
+        border-color: #F4AFC5;
+    }
 
-.spot-card:hover {
-    transform: translateY(-8px);
-    box-shadow:0 10px 18px rgba(0,0,0,0.2);
-}
+    .category-icon {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 25px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid #F4AFC5;
+        transition: all 0.4s ease;
+    }
+
+    .category-card:hover .category-icon {
+        transform: scale(1.1) rotate(5deg);
+        border-color: #C1697F;
+    }
+
+    .category-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .category-card h3 {
+        font-size: 22px;
+        color: #333;
+        margin-bottom: 12px;
+        font-weight: 600;
+    }
+
+    .category-card p {
+        color: #666;
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .category-link {
+        display: inline-block;
+        color: #C1697F;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+    .category-link:hover {
+        color: #F4AFC5;
+        transform: translateX(5px);
+    }
+
+    .products-section {
+        padding: 80px 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+        background: linear-gradient(to bottom, #fff 0%, #fff0f6 100%);
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .product-category {
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .product-image {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        height: 320px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .product-category:hover .product-image img {
+        transform: scale(1.15);
+    }
+
+    .product-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(193, 105, 127, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .product-category:hover .product-overlay {
+        opacity: 1;
+    }
+
+    .overlay-btn {
+        padding: 12px 30px;
+        background: white;
+        color: #C1697F;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+    }
+
+    .overlay-btn:hover {
+        background: #F4AFC5;
+        color: white;
+        transform: scale(1.05);
+    }
+
+    .product-category h3 {
+        margin-top: 20px;
+        font-size: 20px;
+        color: #333;
+        font-weight: 600;
+    }
+
+    .stats-section {
+        padding: 80px 20px;
+        background: #C1697F;
+        color: white;
+    }
+
+    .stats-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        text-align: center;
+    }
+
+    .stat-item {
+        padding: 30px;
+    }
+
+    .stat-number {
+        font-size: 52px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        color: white;
+    }
+
+    .stat-item p {
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .testimonials-section {
+        padding: 80px 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .testimonials-slider {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 35px;
+    }
+
+    .testimonial-card {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+        border-left: 5px solid #F4AFC5;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(193, 105, 127, 0.2);
+        border-left-color: #C1697F;
+    }
+
+    .testimonial-stars {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .testimonial-text {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 25px;
+        font-style: italic;
+    }
+
+    .testimonial-author {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .testimonial-author strong {
+        color: #C1697F;
+        font-size: 18px;
+    }
+
+    .testimonial-author span {
+        color: #888;
+        font-size: 14px;
+    }
+
+    .cta-section {
+        padding: 100px 20px;
+        background: linear-gradient(135deg, #F4AFC5 0%, #C1697F 100%);
+        text-align: center;
+    }
+
+    .cta-content h2 {
+        font-size: 46px;
+        color: white;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    .cta-content p {
+        font-size: 20px;
+        color: white;
+        margin-bottom: 40px;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        padding: 18px 50px;
+        background: white;
+        color: #C1697F;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-btn:hover {
+        background: #DFA8B8;
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
 
     .footer {
         position: relative;
-        background: #F4AFC5; 
+        background: #F4AFC5;
         color: black;
-        margin-top: 80px;
         overflow: hidden;
-        border-top: 8px solid #9A5465; 
+        border-top: 8px solid #9A5465;
+        font-family: "Poppins", sans-serif;
     }
 
     .footer-content {
@@ -551,26 +631,35 @@ body {
     }
 
     .footer-heading {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bold;
-        margin-bottom: 25px;
-        position: relative;
-        padding-bottom: 15px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        margin-bottom: 20px;
     }
 
     .footer-desc {
+        font-size: 14px;
         line-height: 1.8;
         margin-bottom: 20px;
-        font-size: 14px;
+    }
+
+    .footer-subscribe-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #9A5465;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .footer-subscribe-btn:hover {
+        background: #C1697F;
     }
 
     .footer-social {
         display: flex;
         gap: 12px;
-        margin-top: 20px;
     }
 
     .social-icon {
@@ -584,17 +673,18 @@ body {
         color: white;
         font-size: 18px;
         transition: all 0.3s ease;
-        border: 2px solid #9A5465; 
+        border: 2px solid #9A5465;
     }
 
     .social-icon:hover {
         background: white;
-        color: #C1697F; 
+        color: #C1697F;
         transform: scale(1.1);
     }
 
     .footer-links {
         list-style: none;
+        padding: 0;
     }
 
     .footer-links li {
@@ -602,7 +692,7 @@ body {
     }
 
     .footer-links a {
-        color:black;
+        color: black;
         text-decoration: none;
         font-size: 14px;
         display: flex;
@@ -613,12 +703,13 @@ body {
     }
 
     .footer-links a:hover {
-        color: #C1697F; 
+        color: #C1697F;
         padding-left: 8px;
     }
 
     .footer-contact {
         list-style: none;
+        padding: 0;
     }
 
     .footer-contact li {
@@ -653,19 +744,17 @@ body {
     }
 
     .contact-info a:hover {
-        color: #C1697F; 
+        color: #C1697F;
     }
 
     .footer-bottom {
         background: #F4AFC5;
         padding: 25px 40px;
         margin-top: 40px;
-        border-top: 1px solid #C1697F; 
+        border-top: 1px solid #C1697F;
     }
 
     .footer-bottom-content {
-        max-width: 100%;
-        margin: 0 auto;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -675,200 +764,377 @@ body {
         font-size: 14px;
         color: black;
     }
+
+    @media (max-width: 1050px) {
+        .navbar {
+            flex-wrap: wrap;
+            padding: 15px 20px;
+        }
+
+        .search-box {
+            margin-top: 10px;
+            width: 60%;
+        }
+
+        .icons {
+            margin-top: 10px;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 36px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+        }
+
+        .section-title {
+            font-size: 32px;
+        }
+
+        .footer-container {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 40px 20px;
+        }
+
+        .menu {
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        .categories-grid,
+        .products-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .stats-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .testimonials-slider {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .hero-title {
+            font-size: 28px;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            width: 100%;
+        }
+
+        .footer-container {
+            grid-template-columns: 1fr;
+        }
+
+        .stat-number {
+            font-size: 38px;
+        }
+
+        .floating-icon {
+            font-size: 40px;
+        }
+    }
 </style>
-</head>
+
 <body>
-<div class="top-bar">
- <p>Welcome to NAH Beauty Care | Free Shipping on Orders</p>
-</div>
-<header class="navbar">
-    <div class="logo">
-        <img src="https://img.freepik.com/premium-vector/beauty-parlour-logo-design_1023984-34389.jpg">
-        BEAUTY STUDIO
+  <header class="beauty-navbar">
+    <div class="nav-left">
+        <img src="https://img.freepik.com/premium-vector/beauty-parlour-logo-design_1023984-34389.jpg" alt="Logo">
+        <h2>BEAUTY STUDIO</h2>
     </div>
-    <div class="search-box">
+
+    <div class="nav-search">
         <input type="text" placeholder="Search">
-        🔍
+        <span>🔍</span>
     </div>
 
-    <div class="icons">
-        👤
-        🛒
-        <button class="book-btn">Book Appointment</button>
+    <div class="nav-icons">
+        <span>👤</span>
+        <span>🛒</span>
     </div>
-
 </header>
-<nav class="menu">
-    <a href="Home.html">Home</a>
-    <a href="Wedding Kits.html">Products</a>
-    <a href="Wedding Kits.html">Wedding Kits</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="feedback.html">Feedback</a>
-    <a href="about us.html">About us</a>
-    <a href="contact us.html">Contact us</a>
-    <a href="kids and baby care.html">Kids & Baby Care</a>
+
+<nav class="beauty-menu">
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Wedding Kits</a>
+    <a href="#">Gallery</a>
+    <a href="#">Feedback</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact</a>
+    <a href="#">Kids & Baby</a>
 </nav>
 
-<section class="section-slider">
 
-    <h2>Featured Collections</h2>
+    <section class="section-slider">
 
-    <div class="slider-container">
+        <h2>Featured Collections</h2>
 
-        <div class="slider-wrapper" id="slider-wrapper">
-            <div class="slide" style="background:#F4AFC5;">
-                <div class="slide-content">
-                    <h3>HAIR CARE ESSENTIALS</h3>
-                    <p>Repair, replenish, and shine. Professional hair line for all types.</p>
-                    <p class="para">Starting from: $ 50</p>
-                    <a href="#" class="slider-a">Shop Hair Products</a>
+        <div class="slider-container">
+
+            <div class="slider-wrapper" id="slider-wrapper">
+                <div class="slide" style="background:#F4AFC5;">
+                    <div class="slide-content">
+                        <h3>HAIR CARE ESSENTIALS</h3>
+                        <p>Repair, replenish, and shine. Professional hair line for all types.</p>
+                        <p class="para">Starting from: $ 50</p>
+                        <a href="#" class="slider-a">Shop Hair Products</a>
+                    </div>
+                    <div class="slide-media">
+                        <video src="video4.mp4" autoplay loop muted playsinline></video>
+                    </div>
                 </div>
-                <div class="slide-media">
-                    <video src="video4.mp4" autoplay loop muted playsinline></video>
+
+                <div class="slide" style="background:#F4AFC5;">
+                    <div class="slide-content">
+                        <h3>ADVANCED SKIN KITS</h3>
+                        <p>Dermatologist recommended routine bundles.</p>
+                        <p class="para">Kit Price: $ 999</p>
+                        <a href="#" class="slider-a">Shop Skin Kits</a>
+                    </div>
+                    <div class="slide-media">
+                        <video src="video1 (2).mp4" autoplay loop muted playsinline></video>
+                    </div>
                 </div>
-            </div>
-            <div class="slide" style="background:#F4AFC5;">
-                <div class="slide-content">
-                    <h3>ADVANCED SKIN KITS</h3>
-                    <p>Dermatologist recommended routine bundles.</p>
-                    <p class="para">Kit Price: $ 999</p>
-                    <a href="#" class="slider-a">Shop Skin Kits</a>
+
+                <div class="slide" style="background:#F4AFC5;">
+                    <div class="slide-content">
+                        <h3>WEDDING MAKE-UP COLLECTION</h3>
+                        <p>Flawless finish & long-lasting beauty.</p>
+                        <p class="para">Limited Edition: $ 500</p>
+                        <a href="#" class="slider-a">View Kits</a>
+                    </div>
+                    <div class="slide-media">
+                        <video src="video5.mp4" autoplay loop muted playsinline></video>
+                    </div>
                 </div>
-                <div class="slide-media">
-                    <video src="video1 (2).mp4" autoplay loop muted playsinline></video>
-                </div>
-            </div>
-            <div class="slide" style="background:#F4AFC5;">
-                <div class="slide-content">
-                    <h3>WEDDING MAKE-UP COLLECTION</h3>
-                    <p>Flawless finish & long-lasting beauty.</p>
-                    <p class="para">Limited Edition: $ 500</p>
-                    <a href="#" class="slider-a">View Kits</a>
-                </div>
-                <div class="slide-media">
-                    <video src="video5.mp4" autoplay loop muted playsinline></video>
-                </div>
+
             </div>
 
         </div>
 
-    </div>
-
-    <div class="slider-dots" id="slider-dots">
-        <span class="dot active-dot" data-index="0"></span>
-        <span class="dot" data-index="1"></span>
-        <span class="dot" data-index="2"></span>
-        
-    </div>
-
-</section>
-<body>
-
-
-<section class="categories">
-    <div class="category"><img src="https://images.pexels.com/photos/6663368/pexels-photo-6663368.jpeg"><p>Facial</p></div>
-    <div class="category"><img src="https://images.pexels.com/photos/3148935/pexels-photo-3148935.jpeg"><p>Wellness</p></div>
-    <div class="category"><img src="https://images.pexels.com/photos/260405/pexels-photo-260405.jpeg"><p>Fitness</p></div>
-    <div class="category"><img src="https://images.pexels.com/photos/6663368/pexels-photo-6663368.jpeg"><p>Hair</p></div>
-    <div class="category"><img src="https://images.pexels.com/photos/5205688/pexels-photo-5205688.jpeg"><p>Body</p></div>
-    <div class="category"><img src="https://images.pexels.com/photos/10536613/pexels-photo-10536613.jpeg"><p>Nail</p></div>
-</section>
-<section class="booking">
-    <h2>Effortlessly book top-notch beauty, health, and fitness services in the USA, whether at home or at a salon</h2>
-</section>
-
-
-<section class="new-on-flourish">
-    <h2>New on beauty Studio</h2>
-    <div class="new-services">
-        <div class="service"><img src="https://images.pexels.com/photos/7011183/pexels-photo-7011183.jpeg"><p>Rejuvenating Facial</p></div>
-        <div class="service"><img src="https://images.pexels.com/photos/6707156/pexels-photo-6707156.jpeg"><p>Intensive Wellness</p></div>
-        <div class="service"><img src="https://images.pexels.com/photos/6724502/pexels-photo-6724502.jpeg"><p>Healthy Glow</p></div>
-        <div class="service"><img src="https://images.pexels.com/photos/6663574/pexels-photo-6663574.jpeg"><p>Hair Transformation</p></div>
-    </div>
-</section>
-
-
-
-<div class="section">
-    <p class="subtitle fade-soft">Be the First to Glow</p>
-    <h1 class="title fade-soft" style="animation-delay:.3s;">New arrivals</h1>
-
-    <div class="product-grid">
-
-        <div class="card">
-            <div class="image-container">
-                <img src="https://images.pexels.com/photos/5912194/pexels-photo-5912194.jpeg" width="100px" height="100px"">
-                <span class="tag">NEW</span>
-            </div>
-            <div class="info">
-                <h3>GlowGetter Serum</h3>
-                <p class="price">RM63.00 MYR</p>
-            </div>
+        <div class="slider-dots" id="slider-dots">
+            <span class="dot active-dot" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
         </div>
-       <div class="card">
-    <div class="image-container">
-        <img src="https://images.pexels.com/photos/7449887/pexels-photo-7449887.jpeg" width="150px">
-        <span class="tag">NEW</span>
-    </div>
-    <div class="info">
-        <h3>Glow with Mist & Serum (Bundle)</h3>
-        <p class="price">RM63.00 MYR</p>
-    </div>
-</div>
+
+    </section>
 
 
-        <div class="card">
-                <img src="https://images.pexels.com/photos/5468656/pexels-photo-5468656.jpeg" width="130px">
-                <span class="tag">NEW</span>
+    </section>
+    <section class="categories-section" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon">
+                    <img src="https://images.pexels.com/photos/6663368/pexels-photo-6663368.jpeg" alt="Facial">
+                </div>
+                <h3>Facial & Skin Care</h3>
+                <p>Rejuvenating treatments for glowing skin</p>
+                <a href="#" class="category-link">Explore →</a>
             </div>
-            <div class="info">
-                <h3>Glow with Mist & Serum (Bundle)</h3>
-                <p class="price">RM63.00 MYR</p>
+            <div class="category-card">
+                <div class="category-icon">
+                    <img src="https://images.pexels.com/photos/6663574/pexels-photo-6663574.jpeg" alt="Hair">
+                </div>
+                <h3>Hair Treatments</h3>
+                <p>Professional styling & care</p>
+                <a href="#" class="category-link">Explore →</a>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">
+                    <img src="https://images.pexels.com/photos/3148935/pexels-photo-3148935.jpeg" alt="Makeup">
+                </div>
+                <h3>Makeup Services</h3>
+                <p>Flawless looks for every occasion</p>
+                <a href="#" class="category-link">Explore →</a>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">
+                    <img src="https://images.pexels.com/photos/10536613/pexels-photo-10536613.jpeg" alt="Nails">
+                </div>
+                <h3>Nail Art & Care</h3>
+                <p>Beautiful nails that shine</p>
+                <a href="#" class="category-link">Explore →</a>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">
+                    <img src="https://images.pexels.com/photos/5205688/pexels-photo-5205688.jpeg" alt="Body">
+                </div>
+                <h3>Body Treatments</h3>
+                <p>Relaxing spa experiences</p>
+                <a href="#" class="category-link">Explore →</a>
+            </div>
+            <div class="category-card">
+                <div class="category-icon">
+                    <img src="https://images.pexels.com/photos/260405/pexels-photo-260405.jpeg" alt="Fitness">
+                </div>
+                <h3>Wellness & Fitness</h3>
+                <p>Complete body wellness</p>
+                <a href="#" class="category-link">Explore →</a>
             </div>
         </div>
-
-    </div>
-</div>
-
-
-
-<h2 style="margin-bottom:25px;">Latest spotlights insights for beauty Studio.</h2>
-
-<div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
-
-    <div class="spot-card">
-        <img src="https://images.pexels.com/photos/7321271/pexels-photo-7321271.jpeg" style="width:100%; height:180px;">
-        <div style="padding:15px;">
-            <p style="color:#8a8a8a;">AUGUST 15, 2023</p>
-            <h3>Understanding Skin Microbiome: The Key to Health…</h3>
+    </section>
+    <section class="products-section" id="products">
+        <h2 class="section-title">Product Categories</h2>
+        <div class="products-grid">
+            <div class="product-category">
+                <div class="product-image">
+                    <img src="https://images.pexels.com/photos/5912194/pexels-photo-5912194.jpeg" alt="Hair Products">
+                    <div class="product-overlay">
+                        <a href="#" class="overlay-btn">View Products</a>
+                    </div>
+                </div>
+                <h3>Hair Care</h3>
+            </div>
+            <div class="product-category">
+                <div class="product-image">
+                    <img src="https://images.pexels.com/photos/7449887/pexels-photo-7449887.jpeg" alt="Skin Care">
+                    <div class="product-overlay">
+                        <a href="#" class="overlay-btn">View Products</a>
+                    </div>
+                </div>
+                <h3>Skin Care</h3>
+            </div>
+            <div class="product-category">
+                <div class="product-image">
+                    <img src="https://images.pexels.com/photos/5468656/pexels-photo-5468656.jpeg" alt="Makeup Kits">
+                    <div class="product-overlay">
+                        <a href="#" class="overlay-btn">View Products</a>
+                    </div>
+                </div>
+                <h3>Makeup Kits</h3>
+            </div>
+            <div class="product-category">
+                <div class="product-image">
+                    <img src="https://images.pexels.com/photos/6707156/pexels-photo-6707156.jpeg" alt="Nail Paints">
+                    <div class="product-overlay">
+                        <a href="#" class="overlay-btn">View Products</a>
+                    </div>
+                </div>
+                <h3>Nail Paints</h3>
+            </div>
+            <div class="product-category">
+                <div class="product-image">
+                    <img src="https://images.pexels.com/photos/6724502/pexels-photo-6724502.jpeg" alt="Nail Arts">
+                    <div class="product-overlay">
+                        <a href="#" class="overlay-btn">View Products</a>
+                    </div>
+                </div>
+                <h3>Nail Arts</h3>
+            </div>
+            <div class="product-category">
+                <div class="product-image">
+                    <img src="https://images.pexels.com/photos/7011183/pexels-photo-7011183.jpeg" alt="Jewellery">
+                    <div class="product-overlay">
+                        <a href="#" class="overlay-btn">View Products</a>
+                    </div>
+                </div>
+                <h3>Jewellery</h3>
+            </div>
+            <div class="product-category">
+                <div class="product-image">
+                    <img src="https://images.pexels.com/photos/8154372/pexels-photo-8154372.jpeg" alt="Wedding Kits">
+                    <div class="product-overlay">
+                        <a href="#" class="overlay-btn">View Products</a>
+                    </div>
+                </div>
+                <h3>Wedding Kits</h3>
+            </div>
+            <div class="product-category">
+                <div class="product-image">
+                    <img src="https://images.pexels.com/photos/6932448/pexels-photo-6932448.jpeg"
+                        alt="Upcoming Products">
+                    <div class="product-overlay">
+                        <a href="#" class="overlay-btn">Coming Soon</a>
+                    </div>
+                </div>
+                <h3>Upcoming Products</h3>
+            </div>
         </div>
-    </div>
-
-    <div class="spot-card" style="animation-delay:.3s;">
-        <img src="https://images.pexels.com/photos/6932448/pexels-photo-6932448.jpeg" style="width:100%; height:180px;">
-        <div style="padding:15px;">
-            <p style="color:#8a8a8a;">AUGUST 15, 2023</p>
-            <h3>Understanding Skin Microbiome: The Key to Health…</h3>
+    </section>
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" data-target="1985">0</div>
+                <p>Serving Since</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="50000">0</div>
+                <p>Happy Customers</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="500">0</div>
+                <p>Products Available</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="25">0</div>
+                <p>Expert Stylists</p>
+            </div>
         </div>
-    </div>
-
-    <div class="spot-card" style="animation-delay:.5s;">
-        <img src="https://images.pexels.com/photos/8154372/pexels-photo-8154372.jpeg" style="width:100%; height:180px;">
-        <div style="padding:15px;">
-            <p style="color:#8a8a8a;">AUGUST 15, 2023</p>
-            <h3>Understanding Skin Microbiome: The Key to Health…</h3>
+    </section>
+    <section class="testimonials-section">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="testimonials-slider">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Amazing service! The products are top quality and the staff is incredibly
+                    professional. Best beauty experience ever!"</p>
+                <div class="testimonial-author">
+                    <strong>Sarah Ahmed</strong>
+                    <span>Regular Customer</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"I love the variety of products available. The wedding kit made my special
+                    day absolutely perfect!"</p>
+                <div class="testimonial-author">
+                    <strong>Ayesha Khan</strong>
+                    <span>Bride 2024</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Professional service and premium quality products. Highly recommended for
+                    all your beauty needs!"</p>
+                <div class="testimonial-author">
+                    <strong>Fatima Ali</strong>
+                    <span>Beauty Enthusiast</span>
+                </div>
+            </div>
         </div>
-    </div>
-
-</div>
-
-   <footer class="footer">
+    </section>
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Look?</h2>
+            <p>Book your appointment today and experience premium beauty services</p>
+            <a href="#" class="cta-btn">Book Now</a>
+        </div>
+    </section>
+    <footer class="footer">
         <div class="footer-content">
             <div class="footer-container">
                 <div class="footer-col">
-                    <h3 class="footer-heading">About Beauty Studio</h3>
-                    <p class="footer-desc">Discover the best beauty treatments, skincare routines, and premium services.</p>
+                    <h3 class="footer-heading">Daily tips MASAE Expert</h3>
+                    <p class="footer-desc">Learn the best tips, tricks, and expert advice to boost your beauty and
+                        wellness routines.</p>
+                    <a href="#" class="footer-subscribe-btn">Subscribe</a>
                     <div class="footer-social">
                         <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
                         <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
@@ -876,17 +1142,15 @@ body {
                         <a href="#" class="social-icon"><i class="bi bi-tiktok"></i></a>
                     </div>
                 </div>
-
                 <div class="footer-col">
                     <h3 class="footer-heading">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="Home.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+                        <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
                         <li><a href="gallery.html"><i class="bi bi-chevron-right"></i> Gallery</a></li>
-                        <li><a href="about us.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
-                        <li><a href="contact us.html"><i class="bi bi-chevron-right"></i> Contact us</a></li>
+                        <li><a href="about-us.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
+                        <li><a href="contact-us.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
                     <h3 class="footer-heading">Services</h3>
                     <ul class="footer-links">
@@ -896,7 +1160,6 @@ body {
                         <li><a href="#"><i class="bi bi-chevron-right"></i> Bridal Packages</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
                     <h3 class="footer-heading">Contact Us</h3>
                     <ul class="footer-contact">
@@ -917,16 +1180,15 @@ body {
                     </ul>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
-                    <p class="copyright">&copy; 2025 Beauty Studio. All Rights Reserved.</p>
+                    <p class="copyright">&copy; 2025 MASAE Expert. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
     const sliderWrapper = document.getElementById('slider-wrapper');
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
@@ -955,7 +1217,226 @@ document.addEventListener('DOMContentLoaded', function() {
 
     showSlide(currentSlide);
 });
-</script>
+        function animateCounter(element, target, duration) {
+            let start = 0;
+            const increment = target / (duration / 16);
+
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start).toLocaleString();
+                }
+            }, 16);
+        }
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.getAttribute('data-target'));
+                        animateCounter(stat, target, 2000);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 100) {
+                navbar.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+        });
+        const fadeElements = document.querySelectorAll('.category-card, .product-category, .testimonial-card');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(30px)';
+                    setTimeout(() => {
+                        entry.target.style.transition = 'all 0.6s ease';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => fadeObserver.observe(element));
+        const searchInput = document.querySelector('.search-box input');
+        if (searchInput) {
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    const searchTerm = searchInput.value.trim();
+                    if (searchTerm) {
+                        alert(`Searching for: ${searchTerm}`);
+                    }
+                }
+            });
+        }
+        const bookBtn = document.querySelector('.book-btn');
+        if (bookBtn) {
+            bookBtn.addEventListener('click', () => {
+                alert('Booking system coming soon! Please call us at (+92) 323-12345');
+            });
+        }
+        document.querySelectorAll('.floating-icon').forEach(icon => {
+            icon.addEventListener('mouseenter', () => {
+                icon.style.transform = 'scale(1.3) rotate(15deg)';
+                icon.style.transition = 'transform 0.3s ease';
+            });
+            icon.addEventListener('mouseleave', () => {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+            const icons = document.querySelectorAll('.floating-icon');
+
+            if (heroContent) {
+                heroContent.style.transform = `translate(-50%, calc(-50% + ${scrolled * 0.2}px))`;
+                heroContent.style.opacity = 1 - scrolled / 600;
+            }
+
+            icons.forEach((icon, index) => {
+                const speed = 0.3 + index * 0.1;
+                icon.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+        const cartArea = document.querySelector('.icons');
+        if (cartArea) {
+            const cart = cartArea.children[1];
+            if (cart) {
+                cart.addEventListener('click', () => {
+                    alert('Your cart is empty. Start shopping!');
+                });
+            }
+
+            const user = cartArea.children[0];
+            if (user) {
+                user.addEventListener('click', () => {
+                    alert('Login/Register feature coming soon!');
+                });
+            }
+        }
+        const sections = document.querySelectorAll('section[id]');
+        const menuLinks = document.querySelectorAll('.menu a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                if (pageYOffset >= top - 200) {
+                    current = section.id;
+                }
+            });
+
+            menuLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        let testimonialIndex = 0;
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        function rotateTestimonials() {
+            if (testimonialCards.length > 0) {
+                testimonialCards.forEach((card, i) => {
+                    if (i === testimonialIndex) {
+                        card.style.transform = 'scale(1.05)';
+                        card.style.boxShadow = '0 20px 50px rgba(193, 105, 127, 0.3)';
+                    } else {
+                        card.style.transform = 'scale(1)';
+                        card.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+                    }
+                });
+                testimonialIndex = (testimonialIndex + 1) % testimonialCards.length;
+            }
+        }
+        setInterval(rotateTestimonials, 4000);
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        console.log('%c🎀 Welcome to Beauty Studio! 🎀', 'color: #C1697F; font-size: 24px; font-weight: bold;');
+        console.log('%cYour ultimate beauty destination since 1985', 'color: #F4AFC5; font-size: 14px;');
+
+
+        const buttons = document.querySelectorAll('.book-btn, .btn-primary, .btn-secondary, .cta-btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', function (e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+        const style = document.createElement('style');
+        style.textContent = `
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple-animation 0.6s ease-out;
+        pointer-events: none;
+    }
+
+    @keyframes ripple-animation {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+
+    button, .btn-primary, .btn-secondary, .cta-btn {
+        position: relative;
+        overflow: hidden;
+    }
+`;
+        document.head.appendChild(style);
+    </script>
 
 </body>
+
 </html>
