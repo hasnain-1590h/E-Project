@@ -5,294 +5,388 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beauty Studio - Your Ultimate Beauty Destination</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-.beauty-navbar {
-    width: 100%;
-    background: #ffffff;
-    padding: 15px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    border-radius: 0 0 20px 20px;
-    box-shadow: 0px 5px 20px rgba(255, 170, 200, 0.35);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.nav-left img {
-    width: 55px;
-    border-radius: 12px;
-}
-
-.nav-left h2 {
-    color: #C1697F;
-    letter-spacing: 2px;
-}
-.nav-search {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: #fff;
-    padding: 8px 15px;
-    border-radius: 30px;
-    border: 2px solid #F4AFC5;
-
-    box-shadow: 0px 4px 10px rgba(255, 175, 197, 0.25);
-}
-
-.nav-search input {
-    border: none;
-    outline: none;
-    font-size: 14px;
-    width: 200px;
-}
-.nav-icons {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    font-size: 22px;
-    cursor: pointer;
-}
-
-.nav-icons span:hover {
-    color: #C1697F;
-    transition: 0.3s;
-}
-.beauty-menu {
-width: 100%;
-    background: #ffffff;
-    padding: 28px 0;
-    display: flex;
-    justify-content: center;
-    gap: 39px;
-    font-weight: 600;
-    box-shadow: 0px 4px 10px rgba(255, 150, 180, 0.20);
-    font-weight: bold;
-    font-size: 17px;
-}
-
-.beauty-menu a {
-    text-decoration: none;
-    color: #333;
-    transition: 0.3s;
-}
-
-.beauty-menu a:hover {
-    color: #C1697F;
-    padding-bottom: 3px;
-    border-bottom: 2px solid #C1697F;
-}
-
-
-    .section-slider h2 {
-       font-size: 32px;
-    color: #C1697F;
-    margin-bottom: 30px;
-    font-family: sans-serif;
-    align-items: center;
-    text-align: center;
-    padding: 24px;
-    padding-bottom: 0;
-}
-
-    .slider-container {
-        position: relative;
-        background: #C1697F;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        overflow: hidden;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
     }
 
-    .slider-wrapper {
+    body {
+        background: #fff;
+        min-height: 100vh;
         display: flex;
-        transition: transform 0.5s ease-in-out;
-        width: 300%;
+        flex-direction: column;
     }
 
-    .slide {
-        flex: 0 0 33.33%;
-        height: 450px;
+    .top-bar {
+        width: 100%;
+        background: linear-gradient(39deg, #c1697f, #F4AFC4, #c1697f);
+        color: black;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(255, 105, 180, 0.2);
+    }
+
+    .top-bar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+        0% {
+            left: -100%;
+        }
+
+        100% {
+            left: 100%;
+        }
+    }
+
+    .navbar {
+        width: 100%;
+        background: white;
+        padding: 15px 40px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        box-shadow: 0 5px 20px rgba(255, 105, 180, 0.15);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 3px solid #ff69b4;
     }
 
-    .slide-content {
-        width: 45%;
-        padding-left: 50px;
-        text-align: left;
-        font-family: sans-serif;
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
     }
 
-    .slide-content h3 {
-        font-size: 34px;
-        color: #222;
-        margin: 0;
+    .logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 32px;
+        font-weight: 800;
+        background: linear-gradient(89deg, #c1697f, #F4AFC5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 2px;
+        position: relative;
+        padding: 0 10px;
     }
 
-    .slide-content p {
+    .logo::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 4px;
+        width: 93%;
+        height: 3px;
+        background: linear-gradient(90deg, #F4AFC5, #c1697f);
+        border-radius: 2px;
+    }
+
+    .tagline {
+        font-size: 12px;
+        color: #c1697f;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-top: 3px;
+        padding: 2px;
+        padding-left: 5px;
+    }
+
+    .search-container {
+        flex: 1;
+        max-width: 400px;
+        margin: 0 30px;
+    }
+
+    .search-box {
+        display: flex;
+        align-items: center;
+        background: #fff5f5;
+        border: 2px solid #ffb6c1;
+        border-radius: 30px;
+        padding: 8px 20px;
+        transition: all 0.3s ease;
+    }
+
+    .search-box:focus-within {
+        border-color: #ff69b4;
+        box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .search-box input {
+        border: none;
+        outline: none;
+        background: transparent;
+        font-size: 14px;
+        flex: 1;
+        padding: 5px;
         color: #555;
+    }
+
+    .search-box i {
+        color: #ff69b4;
         font-size: 16px;
-        margin: 8px 0;
+        cursor: pointer;
+        transition: transform 0.3s;
     }
 
-    .para {
+    .search-box i:hover {
+        transform: scale(1.1);
+    }
+
+    .icons {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .icon-item {
+        position: relative;
+        color: #555;
         font-size: 20px;
-        font-weight: 700;
-        color: #C1697F;
-        margin: 12px 0 25px 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 8px;
+        border-radius: 50%;
     }
 
-    .slider-a {
-        display: inline-block;
-        background: #DFA8B8;
-        color: #222;
-        padding: 12px 25px;
-        border-radius: 5px;
-        font-weight: 600;
-        text-transform: uppercase;
-        text-decoration: none;
-        transition: 0.3s;
+    .icon-item:hover {
+        color: #c1697f;
+        background: #fff5f5;
+        transform: translateY(-3px);
     }
 
-    .slider-a:hover {
-        background: #C1697F;
+    .menu-container {
+        background: linear-gradient(90deg, #fff5f5, #ffe6e6);
+        padding: 0 40px;
+        box-shadow: 0 3px 10px rgba(255, 105, 180, 0.1);
     }
 
-    .slide-media {
-        width: 55%;
-        height: 100%;
-        background: #DFA8B8;
+    .menu {
         display: flex;
         justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 18px;
+        gap: 66px;
+        padding: 18px 0;
     }
 
-    .slide-media img,
-    .slide-media video {
+    .menu a {
+        text-decoration: none;
+        color: #555;
+        font-weight: 600;
+        font-size: 15px;
+        padding: 1px 3px;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .menu a::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #ff69b4, #ff1493);
+        transition: width 0.3s ease;
+        border-radius: 2px;
+    }
+
+    .menu a:hover {
+        color: #c1697f;
+    }
+
+    .menu a:hover::before {
+        width: 100%;
+    }
+
+    .menu a.active {
+        color: #c1697f;
+    }
+
+    .menu a.active::before {
+        width: 100%;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        min-width: 200px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        border: 1px solid #ffe6e6;
+    }
+
+    .dropdown:hover .dropdown-content {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 12px 20px;
+        color: #555;
+        text-decoration: none;
+        border-bottom: 1px solid #fff5f5;
+        transition: all 0.3s ease;
+    }
+
+    .dropdown-content a:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-content a:hover {
+        background: #fff5f5;
+        color: #c1697f;
+        padding-left: 25px;
+    }
+    .video-container {
+        position: relative;
+        width: 100%;
+        height: 76vh; 
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 10px;
+        z-index: 1;
     }
 
-    .slider-dots {
-        margin-top: 20px;
-        padding-left: 588px;
-    }
-
-    .dot {
-        height: 10px;
-        width: 10px;
-        background: #ccc;
-        border-radius: 50%;
-        display: inline-block;
-        margin: 0 5px;
-        cursor: pointer;
-        transition: background 0.3s;
-    }
-
-    .dot.active-dot {
-        background: #C1697F;
-    }
-
-    @media (max-width: 768px) {
-        .slide {
-            flex-direction: column;
-            height: auto;
-            min-height: 400px;
-            padding: 15px 0 25px 0;
-        }
-
-        .slide-content {
-            width: 100%;
-            padding: 10px 15px;
-            text-align: center;
-            order: 2;
-        }
-
-        .slide-media {
-            width: 100%;
-            height: 220px;
-            order: 1;
-        }
-
-        .slide-content h3 {
-            font-size: 24px;
-        }
-    }
-
-
-
-    .floating-icon {
+    .video-overlay {
         position: absolute;
-        font-size: 60px;
-        animation: float 6s ease-in-out infinite;
-        opacity: 0.6;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 2;
+    }
+    .video-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        z-index: 3;
+        width: 100%;
+        padding: 20px;
     }
 
-    .icon-1 {
-        top: 15%;
-        left: 10%;
-        animation-delay: 0s;
+    .video-text h1 {
+        font-size: 3.5rem;
+        font-weight: 750;
+        text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+        margin-bottom: 11px;
+        animation: fadeInDown 1s ease-out;
     }
 
-    .icon-2 {
-        top: 70%;
-        left: 15%;
-        animation-delay: 1.5s;
+    .video-text p {
+        margin-bottom: 30px;
+        opacity: 0.9;
+        font-weight: 500;
+        animation: fadeInUp 1s ease-out;
+        color: black;
     }
 
-    .icon-3 {
-        top: 20%;
-        right: 15%;
-        animation-delay: 3s;
+    .video-text button {
+        margin-top: 20px;
+        padding: 15px 35px;
+        background: #ff7cad;
+        border: none;
+        border-radius: 30px;
+        color: #fff;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        box-shadow: 0px 5px 15px rgba(255, 140, 180, 0.4);
+        transition: all 0.3s ease;
+        animation: fadeIn 1.5s ease-out;
     }
 
-    .icon-4 {
-        top: 65%;
-        right: 10%;
-        animation-delay: 4.5s;
+    .video-text button:hover {
+        background: #ff94c1;
+        transform: translateY(-3px);
+        box-shadow: 0px 8px 20px rgba(255, 140, 180, 0.6);
     }
 
-    @keyframes float {
-
-        0%,
-        100% {
-            transform: translateY(0) rotate(0deg);
-        }
-
-        50% {
-            transform: translateY(-30px) rotate(10deg);
-        }
-    }
-
-    @keyframes fadeInUp {
+    @keyframes fadeInDown {
         from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(-50px);
         }
 
         to {
             opacity: 1;
             transform: translateY(0);
         }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .main-content {
+        width: 100%;
+        background: white;
+        position: relative;
+        z-index: 10;
     }
 
     .section-title {
@@ -316,17 +410,18 @@ width: 100%;
         background: #F4AFC5;
         border-radius: 2px;
     }
-
     .categories-section {
-        padding: 80px 20px;
+        padding: 14px 20px;
         max-width: 1400px;
         margin: 0 auto;
+        width: 100%;
     }
 
     .categories-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 35px;
+        width: 100%;
     }
 
     .category-card {
@@ -393,10 +488,12 @@ width: 100%;
         transform: translateX(5px);
     }
 
+    /* FIXED: Products Section */
     .products-section {
         padding: 80px 20px;
         max-width: 1400px;
         margin: 0 auto;
+        width: 100%;
         background: linear-gradient(to bottom, #fff 0%, #fff0f6 100%);
     }
 
@@ -404,11 +501,13 @@ width: 100%;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 30px;
+        width: 100%;
     }
 
     .product-category {
         text-align: center;
         transition: all 0.3s ease;
+        width: 100%;
     }
 
     .product-image {
@@ -473,10 +572,12 @@ width: 100%;
         font-weight: 600;
     }
 
+    /* FIXED: Stats Section */
     .stats-section {
         padding: 80px 20px;
         background: #C1697F;
         color: white;
+        width: 100%;
     }
 
     .stats-container {
@@ -506,16 +607,19 @@ width: 100%;
         letter-spacing: 1px;
     }
 
+    /* FIXED: Testimonials Section */
     .testimonials-section {
         padding: 80px 20px;
         max-width: 1400px;
         margin: 0 auto;
+        width: 100%;
     }
 
     .testimonials-slider {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 35px;
+        width: 100%;
     }
 
     .testimonial-card {
@@ -562,10 +666,12 @@ width: 100%;
         font-size: 14px;
     }
 
+    /* FIXED: CTA Section */
     .cta-section {
         padding: 100px 20px;
         background: linear-gradient(135deg, #F4AFC5 0%, #C1697F 100%);
         text-align: center;
+        width: 100%;
     }
 
     .cta-content h2 {
@@ -603,63 +709,70 @@ width: 100%;
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     }
 
-    .footer {
-        position: relative;
-        background: #F4AFC5;
-        color: black;
-        overflow: hidden;
-        border-top: 8px solid #9A5465;
-        font-family: "Poppins", sans-serif;
-    }
+.footer {
+    background: linear-gradient(145deg, #F4AFC5 10%, #c1697f 100%);
+    color: black;
+    margin-top: auto;
+    padding-top: 60px;
+    position: relative;
+    overflow: hidden;
+}
 
-    .footer-content {
-        position: relative;
-        z-index: 2;
+    .footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, #ffb6c1, #ff69b4, #ffb6c1);
     }
 
     .footer-container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 60px 40px 40px;
+        padding: 0 40px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 40px;
+        position: relative;
+        z-index: 2;
     }
 
     .footer-col {
-        opacity: 1;
+        padding: 20px;
     }
 
     .footer-heading {
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        position: relative;
+        color: black;
+    }
+
+    .footer-heading::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: black;
+        border-radius: 2px;
     }
 
     .footer-desc {
-        font-size: 14px;
         line-height: 1.8;
         margin-bottom: 20px;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.9);
     }
-
-    .footer-subscribe-btn {
-        display: inline-block;
-        padding: 10px 20px;
-        background: #9A5465;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        margin-bottom: 20px;
-        transition: all 0.3s ease;
-    }
-
-    .footer-subscribe-btn:hover {
-        background: #C1697F;
-    }
-
     .footer-social {
         display: flex;
         gap: 12px;
+        margin-top: 20px;
     }
 
     .social-icon {
@@ -670,21 +783,22 @@ width: 100%;
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        color: white;
+        color: black;
+        background: white;
         font-size: 18px;
         transition: all 0.3s ease;
-        border: 2px solid #9A5465;
+
+                background: rgba(255, 255, 255  , 0.2);
     }
 
     .social-icon:hover {
-        background: white;
-        color: #C1697F;
-        transform: scale(1.1);
+     
+        color: #c1697f;
+        transform: translateY(-3px) rotate(5deg);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
-
     .footer-links {
         list-style: none;
-        padding: 0;
     }
 
     .footer-links li {
@@ -692,7 +806,7 @@ width: 100%;
     }
 
     .footer-links a {
-        color: black;
+        color: rgba(0, 0, 0, 0.9);
         text-decoration: none;
         font-size: 14px;
         display: flex;
@@ -703,13 +817,16 @@ width: 100%;
     }
 
     .footer-links a:hover {
-        color: #C1697F;
+        color:#c1697f;
         padding-left: 8px;
     }
 
+    .footer-links a i {
+        color:black;
+        font-size: 12px;
+    }
     .footer-contact {
         list-style: none;
-        padding: 0;
     }
 
     .footer-contact li {
@@ -720,8 +837,15 @@ width: 100%;
     }
 
     .contact-icon {
-        font-size: 24px;
-        color: white;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+        background: rgba(255, 255, 255  , 0.2);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .contact-info {
@@ -734,489 +858,389 @@ width: 100%;
         font-size: 13px;
         text-transform: uppercase;
         letter-spacing: 1px;
+        color: black;
     }
 
     .contact-info a {
-        color: black;
+        color: rgba(0, 0, 0, 0.9);
         text-decoration: none;
         font-size: 15px;
         transition: all 0.3s ease;
     }
 
     .contact-info a:hover {
-        color: #C1697F;
+        color:#c1697f;
+        text-decoration: underline;
     }
 
     .footer-bottom {
-        background: #F4AFC5;
-        padding: 25px 40px;
-        margin-top: 40px;
-        border-top: 1px solid #C1697F;
+        background: rgba(0, 0, 0, 0.1);
+        padding: 15px 40px;
+        margin-top: 60px;
     }
 
-    .footer-bottom-content {
+.footer-bottom-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+
+.copyright {
+    grid-column: 2;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 16px;
+}
+
+
+    .payment-methods {
         display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .copyright {
-        font-size: 14px;
+        gap: 10px;
+        font-size: 24px;
         color: black;
-    }
-
-    @media (max-width: 1050px) {
-        .navbar {
-            flex-wrap: wrap;
-            padding: 15px 20px;
-        }
-
-        .search-box {
-            margin-top: 10px;
-            width: 60%;
-        }
-
-        .icons {
-            margin-top: 10px;
-            width: 100%;
-            justify-content: center;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .hero-title {
-            font-size: 36px;
-        }
-
-        .hero-subtitle {
-            font-size: 18px;
-        }
-
-        .section-title {
-            font-size: 32px;
-        }
-
-        .footer-container {
-            grid-template-columns: repeat(2, 1fr);
-            padding: 40px 20px;
-        }
-
-        .menu {
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 10px 0;
-        }
-
-        .categories-grid,
-        .products-grid {
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        }
-
-        .stats-container {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .testimonials-slider {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    @media (max-width: 500px) {
-        .hero-title {
-            font-size: 28px;
-        }
-
-        .hero-buttons {
-            flex-direction: column;
-            width: 100%;
-        }
-
-        .btn-primary,
-        .btn-secondary {
-            width: 100%;
-        }
-
-        .footer-container {
-            grid-template-columns: 1fr;
-        }
-
-        .stat-number {
-            font-size: 38px;
-        }
-
-        .floating-icon {
-            font-size: 40px;
-        }
+        padding-top: 12px;
     }
 </style>
 
 <body>
-  <header class="beauty-navbar">
-    <div class="nav-left">
-        <img src="https://img.freepik.com/premium-vector/beauty-parlour-logo-design_1023984-34389.jpg" alt="Logo">
-        <h2>BEAUTY STUDIO</h2>
+    <div class="top-bar">
+        <p>Welcome to NAH Beauty Care | Free Shipping on Orders Over $50 </p>
+    </div>
+    <header class="navbar">
+        <div class="logo-container">
+            <div>
+                <div class="logo">NAH</div>
+                <div class="tagline">BEAUTY CARE</div>
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" placeholder="Search for beauty products...">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+        <div class="icons">
+            <div class="icon-item">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="icon-item">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="icon-item">
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+        </div>
+    </header>
+    <nav class="menu-container">
+        <div class="menu">
+            <a href="Home.html" class="active">Home</a>
+            <div class="dropdown">
+                <a href="product.html">Products</a>
+                <div class="dropdown-content">
+                    <a href="product.html#hair">Hair Care</a>
+                    <a href="product.html#skin">Skin Care</a>
+                    <a href="product.html#makeup">Makeup</a>
+                    <a href="product.html#nail">Nail Products</a>
+                </div>
+            </div>
+            <a href="gallery.html">Gallery</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="about us.html">About us</a>
+            <a href="contact us.html">Contact us</a>
+        </div>
+    </nav>
+
+
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="https://www.pexels.com/download/video/8903822/" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+        <div class="video-text">
+            <h1>Enhance Your Natural Beauty</h1>
+            <p>Premium Skincare • Haircare • Beauty Essentials</p>
+            <button>Shop Now</button>
+        </div>
     </div>
 
-    <div class="nav-search">
-        <input type="text" placeholder="Search">
-        <span>🔍</span>
-    </div>
-
-    <div class="nav-icons">
-        <span>👤</span>
-        <span>🛒</span>
-    </div>
-</header>
-
-<nav class="beauty-menu">
-    <a href="#">Home</a>
-    <a href="#">Products</a>
-    <a href="#">Wedding Kits</a>
-    <a href="#">Gallery</a>
-    <a href="#">Feedback</a>
-    <a href="#">About Us</a>
-    <a href="#">Contact</a>
-    <a href="#">Kids & Baby</a>
-</nav>
-
-
-    <section class="section-slider">
-
-        <h2>Featured Collections</h2>
-
-        <div class="slider-container">
-
-            <div class="slider-wrapper" id="slider-wrapper">
-                <div class="slide" style="background:#F4AFC5;">
-                    <div class="slide-content">
-                        <h3>HAIR CARE ESSENTIALS</h3>
-                        <p>Repair, replenish, and shine. Professional hair line for all types.</p>
-                        <p class="para">Starting from: $ 50</p>
-                        <a href="#" class="slider-a">Shop Hair Products</a>
+    <main class="main-content">
+        <section class="categories-section" id="services">
+            <h2 class="section-title">Our Services</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="https://images.pexels.com/photos/6663368/pexels-photo-6663368.jpeg" alt="Facial">
                     </div>
-                    <div class="slide-media">
-                        <video src="video4.mp4" autoplay loop muted playsinline></video>
+                    <h3>Facial & Skin Care</h3>
+                    <p>Rejuvenating treatments for glowing skin</p>
+                    <a href="#" class="category-link">Explore →</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="https://images.pexels.com/photos/6663574/pexels-photo-6663574.jpeg" alt="Hair">
                     </div>
+                    <h3>Hair Treatments</h3>
+                    <p>Professional styling & care</p>
+                    <a href="#" class="category-link">Explore →</a>
                 </div>
-
-                <div class="slide" style="background:#F4AFC5;">
-                    <div class="slide-content">
-                        <h3>ADVANCED SKIN KITS</h3>
-                        <p>Dermatologist recommended routine bundles.</p>
-                        <p class="para">Kit Price: $ 999</p>
-                        <a href="#" class="slider-a">Shop Skin Kits</a>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="https://images.pexels.com/photos/3148935/pexels-photo-3148935.jpeg" alt="Makeup">
                     </div>
-                    <div class="slide-media">
-                        <video src="video1 (2).mp4" autoplay loop muted playsinline></video>
+                    <h3>Makeup Services</h3>
+                    <p>Flawless looks for every occasion</p>
+                    <a href="#" class="category-link">Explore →</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="https://images.pexels.com/photos/10536613/pexels-photo-10536613.jpeg" alt="Nails">
                     </div>
+                    <h3>Nail Art & Care</h3>
+                    <p>Beautiful nails that shine</p>
+                    <a href="#" class="category-link">Explore →</a>
                 </div>
-
-                <div class="slide" style="background:#F4AFC5;">
-                    <div class="slide-content">
-                        <h3>WEDDING MAKE-UP COLLECTION</h3>
-                        <p>Flawless finish & long-lasting beauty.</p>
-                        <p class="para">Limited Edition: $ 500</p>
-                        <a href="#" class="slider-a">View Kits</a>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="https://images.pexels.com/photos/5205688/pexels-photo-5205688.jpeg" alt="Body">
                     </div>
-                    <div class="slide-media">
-                        <video src="video5.mp4" autoplay loop muted playsinline></video>
+                    <h3>Body Treatments</h3>
+                    <p>Relaxing spa experiences</p>
+                    <a href="#" class="category-link">Explore →</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <img src="https://images.pexels.com/photos/260405/pexels-photo-260405.jpeg" alt="Fitness">
                     </div>
+                    <h3>Wellness & Fitness</h3>
+                    <p>Complete body wellness</p>
+                    <a href="#" class="category-link">Explore →</a>
                 </div>
+            </div>
+        </section>
 
-            </div>
-
-        </div>
-
-        <div class="slider-dots" id="slider-dots">
-            <span class="dot active-dot" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-            <span class="dot" data-index="2"></span>
-        </div>
-
-    </section>
-
-
-    </section>
-    <section class="categories-section" id="services">
-        <h2 class="section-title">Our Services</h2>
-        <div class="categories-grid">
-            <div class="category-card">
-                <div class="category-icon">
-                    <img src="https://images.pexels.com/photos/6663368/pexels-photo-6663368.jpeg" alt="Facial">
-                </div>
-                <h3>Facial & Skin Care</h3>
-                <p>Rejuvenating treatments for glowing skin</p>
-                <a href="#" class="category-link">Explore →</a>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">
-                    <img src="https://images.pexels.com/photos/6663574/pexels-photo-6663574.jpeg" alt="Hair">
-                </div>
-                <h3>Hair Treatments</h3>
-                <p>Professional styling & care</p>
-                <a href="#" class="category-link">Explore →</a>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">
-                    <img src="https://images.pexels.com/photos/3148935/pexels-photo-3148935.jpeg" alt="Makeup">
-                </div>
-                <h3>Makeup Services</h3>
-                <p>Flawless looks for every occasion</p>
-                <a href="#" class="category-link">Explore →</a>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">
-                    <img src="https://images.pexels.com/photos/10536613/pexels-photo-10536613.jpeg" alt="Nails">
-                </div>
-                <h3>Nail Art & Care</h3>
-                <p>Beautiful nails that shine</p>
-                <a href="#" class="category-link">Explore →</a>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">
-                    <img src="https://images.pexels.com/photos/5205688/pexels-photo-5205688.jpeg" alt="Body">
-                </div>
-                <h3>Body Treatments</h3>
-                <p>Relaxing spa experiences</p>
-                <a href="#" class="category-link">Explore →</a>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">
-                    <img src="https://images.pexels.com/photos/260405/pexels-photo-260405.jpeg" alt="Fitness">
-                </div>
-                <h3>Wellness & Fitness</h3>
-                <p>Complete body wellness</p>
-                <a href="#" class="category-link">Explore →</a>
-            </div>
-        </div>
-    </section>
-    <section class="products-section" id="products">
-        <h2 class="section-title">Product Categories</h2>
-        <div class="products-grid">
-            <div class="product-category">
-                <div class="product-image">
-                    <img src="https://images.pexels.com/photos/5912194/pexels-photo-5912194.jpeg" alt="Hair Products">
-                    <div class="product-overlay">
-                        <a href="#" class="overlay-btn">View Products</a>
+        <section class="products-section" id="products">
+            <h2 class="section-title">Product Categories</h2>
+            <div class="products-grid">
+                <div class="product-category">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/5912194/pexels-photo-5912194.jpeg" alt="Hair Products">
+                        <div class="product-overlay">
+                            <a href="#" class="overlay-btn">View Products</a>
+                        </div>
                     </div>
+                    <h3>Hair Care</h3>
                 </div>
-                <h3>Hair Care</h3>
-            </div>
-            <div class="product-category">
-                <div class="product-image">
-                    <img src="https://images.pexels.com/photos/7449887/pexels-photo-7449887.jpeg" alt="Skin Care">
-                    <div class="product-overlay">
-                        <a href="#" class="overlay-btn">View Products</a>
+                <div class="product-category">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/7449887/pexels-photo-7449887.jpeg" alt="Skin Care">
+                        <div class="product-overlay">
+                            <a href="#" class="overlay-btn">View Products</a>
+                        </div>
                     </div>
+                    <h3>Skin Care</h3>
                 </div>
-                <h3>Skin Care</h3>
-            </div>
-            <div class="product-category">
-                <div class="product-image">
-                    <img src="https://images.pexels.com/photos/5468656/pexels-photo-5468656.jpeg" alt="Makeup Kits">
-                    <div class="product-overlay">
-                        <a href="#" class="overlay-btn">View Products</a>
+                <div class="product-category">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/5468656/pexels-photo-5468656.jpeg" alt="Makeup Kits">
+                        <div class="product-overlay">
+                            <a href="#" class="overlay-btn">View Products</a>
+                        </div>
                     </div>
+                    <h3>Makeup Kits</h3>
                 </div>
-                <h3>Makeup Kits</h3>
+                <div class="product-category">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6707156/pexels-photo-6707156.jpeg" alt="Nail Paints">
+                        <div class="product-overlay">
+                            <a href="#" class="overlay-btn">View Products</a>
+                        </div>
+                    </div>
+                    <h3>Nail Paints</h3>
+                </div>
+                <div class="product-category">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6724502/pexels-photo-6724502.jpeg" alt="Nail Arts">
+                        <div class="product-overlay">
+                            <a href="#" class="overlay-btn">View Products</a>
+                        </div>
+                    </div>
+                    <h3>Nail Arts</h3>
+                </div>
+                <div class="product-category">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/7011183/pexels-photo-7011183.jpeg" alt="Jewellery">
+                        <div class="product-overlay">
+                            <a href="#" class="overlay-btn">View Products</a>
+                        </div>
+                    </div>
+                    <h3>Jewellery</h3>
+                </div>
+                <div class="product-category">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/8154372/pexels-photo-8154372.jpeg" alt="Wedding Kits">
+                        <div class="product-overlay">
+                            <a href="#" class="overlay-btn">View Products</a>
+                        </div>
+                    </div>
+                    <h3>Wedding Kits</h3>
+                </div>
+                <div class="product-category">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6932448/pexels-photo-6932448.jpeg" alt="Upcoming Products">
+                        <div class="product-overlay">
+                            <a href="#" class="overlay-btn">Coming Soon</a>
+                        </div>
+                    </div>
+                    <h3>Upcoming Products</h3>
+                </div>
             </div>
-            <div class="product-category">
-                <div class="product-image">
-                    <img src="https://images.pexels.com/photos/6707156/pexels-photo-6707156.jpeg" alt="Nail Paints">
-                    <div class="product-overlay">
-                        <a href="#" class="overlay-btn">View Products</a>
+        </section>
+
+        <section class="stats-section">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="1985">0</div>
+                    <p>Serving Since</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50000">0</div>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="500">0</div>
+                    <p>Products Available</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="25">0</div>
+                    <p>Expert Stylists</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Amazing service! The products are top quality and the staff is incredibly professional. Best beauty experience ever!"</p>
+                    <div class="testimonial-author">
+                        <strong>Sarah Ahmed</strong>
+                        <span>Regular Customer</span>
                     </div>
                 </div>
-                <h3>Nail Paints</h3>
-            </div>
-            <div class="product-category">
-                <div class="product-image">
-                    <img src="https://images.pexels.com/photos/6724502/pexels-photo-6724502.jpeg" alt="Nail Arts">
-                    <div class="product-overlay">
-                        <a href="#" class="overlay-btn">View Products</a>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"I love the variety of products available. The wedding kit made my special day absolutely perfect!"</p>
+                    <div class="testimonial-author">
+                        <strong>Ayesha Khan</strong>
+                        <span>Bride 2024</span>
                     </div>
                 </div>
-                <h3>Nail Arts</h3>
-            </div>
-            <div class="product-category">
-                <div class="product-image">
-                    <img src="https://images.pexels.com/photos/7011183/pexels-photo-7011183.jpeg" alt="Jewellery">
-                    <div class="product-overlay">
-                        <a href="#" class="overlay-btn">View Products</a>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Professional service and premium quality products. Highly recommended for all your beauty needs!"</p>
+                    <div class="testimonial-author">
+                        <strong>Fatima Ali</strong>
+                        <span>Beauty Enthusiast</span>
                     </div>
                 </div>
-                <h3>Jewellery</h3>
             </div>
-            <div class="product-category">
-                <div class="product-image">
-                    <img src="https://images.pexels.com/photos/8154372/pexels-photo-8154372.jpeg" alt="Wedding Kits">
-                    <div class="product-overlay">
-                        <a href="#" class="overlay-btn">View Products</a>
-                    </div>
-                </div>
-                <h3>Wedding Kits</h3>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Look?</h2>
+                <p>Book your appointment today and experience premium beauty services</p>
+                <a href="#" class="cta-btn">Book Now</a>
             </div>
-            <div class="product-category">
-                <div class="product-image">
-                    <img src="https://images.pexels.com/photos/6932448/pexels-photo-6932448.jpeg"
-                        alt="Upcoming Products">
-                    <div class="product-overlay">
-                        <a href="#" class="overlay-btn">Coming Soon</a>
-                    </div>
-                </div>
-                <h3>Upcoming Products</h3>
-            </div>
-        </div>
-    </section>
-    <section class="stats-section">
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-number" data-target="1985">0</div>
-                <p>Serving Since</p>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="50000">0</div>
-                <p>Happy Customers</p>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="500">0</div>
-                <p>Products Available</p>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="25">0</div>
-                <p>Expert Stylists</p>
-            </div>
-        </div>
-    </section>
-    <section class="testimonials-section">
-        <h2 class="section-title">What Our Customers Say</h2>
-        <div class="testimonials-slider">
-            <div class="testimonial-card">
-                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text">"Amazing service! The products are top quality and the staff is incredibly
-                    professional. Best beauty experience ever!"</p>
-                <div class="testimonial-author">
-                    <strong>Sarah Ahmed</strong>
-                    <span>Regular Customer</span>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text">"I love the variety of products available. The wedding kit made my special
-                    day absolutely perfect!"</p>
-                <div class="testimonial-author">
-                    <strong>Ayesha Khan</strong>
-                    <span>Bride 2024</span>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text">"Professional service and premium quality products. Highly recommended for
-                    all your beauty needs!"</p>
-                <div class="testimonial-author">
-                    <strong>Fatima Ali</strong>
-                    <span>Beauty Enthusiast</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Transform Your Look?</h2>
-            <p>Book your appointment today and experience premium beauty services</p>
-            <a href="#" class="cta-btn">Book Now</a>
-        </div>
-    </section>
+        </section>
+    </main>
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h3 class="footer-heading">Daily tips MASAE Expert</h3>
-                    <p class="footer-desc">Learn the best tips, tricks, and expert advice to boost your beauty and
-                        wellness routines.</p>
-                    <a href="#" class="footer-subscribe-btn">Subscribe</a>
-                    <div class="footer-social">
-                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-tiktok"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h3 class="footer-heading">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
-                        <li><a href="gallery.html"><i class="bi bi-chevron-right"></i> Gallery</a></li>
-                        <li><a href="about-us.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
-                        <li><a href="contact-us.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3 class="footer-heading">Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="bi bi-chevron-right"></i> Facial & Skin Care</a></li>
-                        <li><a href="#"><i class="bi bi-chevron-right"></i> Makeup Services</a></li>
-                        <li><a href="#"><i class="bi bi-chevron-right"></i> Hair Treatments</a></li>
-                        <li><a href="#"><i class="bi bi-chevron-right"></i> Bridal Packages</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3 class="footer-heading">Contact Us</h3>
-                    <ul class="footer-contact">
-                        <li>
-                            <i class="bi bi-telephone-fill contact-icon"></i>
-                            <div class="contact-info">
-                                <strong>Phone</strong>
-                                <a href="tel:+923231234567">(+92) 323-12345</a>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="bi bi-envelope-fill contact-icon"></i>
-                            <div class="contact-info">
-                                <strong>Email</strong>
-                                <a href="mailto:info@beautystudio.pk">info@beautystudio.pk</a>
-                            </div>
-                        </li>
-                    </ul>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-heading">About NAH Beauty Care</h3>
+                <p class="footer-desc">Discover the best beauty treatments, skincare routines, and premium services. We bring you luxury beauty products for your everyday needs.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p class="copyright">&copy; 2025 MASAE Expert. All Rights Reserved.</p>
+
+            <div class="footer-col">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="Home.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                    <li><a href="about us.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="contact us.html"><i class="fas fa-chevron-right"></i> Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-heading">Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Facial & Skin Care</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Makeup Services</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Hair Treatments</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Bridal Packages</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-heading">Contact Us</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-info">
+                            <strong>Phone</strong>
+                            <a href="tel:+923231234567">(+92) 323-12345</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info">
+                            <strong>Email</strong>
+                            <a href="mailto:info@nahbeauty.pk">info@nahbeauty.pk</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-info">
+                            <strong>Address</strong>
+                            <span>Beauty Street, Cosmetic City</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="copyright">&copy; 2025 NAH Beauty Care. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fas fa-credit-card"></i>
                 </div>
             </div>
         </div>
     </footer>
+
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const sliderWrapper = document.getElementById('slider-wrapper');
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    const totalSlides = slides.length;
-    let currentSlide = 0;
-
-    function showSlide(index) {
-        const offset = index * -100 / totalSlides;
-        sliderWrapper.style.transform = `translateX(${offset}%)`;
-
-        dots.forEach(dot => dot.classList.remove('active-dot'));
-        dots[index].classList.add('active-dot');
-
-        currentSlide = index;
-    }
-    setInterval(() => {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        showSlide(currentSlide);
-    }, 5000);
-    dots.forEach(dot => {
-        dot.addEventListener('click', (event) => {
-            const index = parseInt(event.target.getAttribute('data-index'));
-            showSlide(index);
-        });
-    });
-
-    showSlide(currentSlide);
-});
         function animateCounter(element, target, duration) {
             let start = 0;
             const increment = target / (duration / 16);
@@ -1251,190 +1275,6 @@ width: 100%;
                 statsObserver.observe(statsSection);
             }
         });
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        const navbar = document.querySelector('.navbar');
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > 100) {
-                navbar.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
-            } else {
-                navbar.style.boxShadow = 'none';
-            }
-        });
-        const fadeElements = document.querySelectorAll('.category-card, .product-category, .testimonial-card');
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '0';
-                    entry.target.style.transform = 'translateY(30px)';
-                    setTimeout(() => {
-                        entry.target.style.transition = 'all 0.6s ease';
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, 100);
-                    fadeObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        fadeElements.forEach(element => fadeObserver.observe(element));
-        const searchInput = document.querySelector('.search-box input');
-        if (searchInput) {
-            searchInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    const searchTerm = searchInput.value.trim();
-                    if (searchTerm) {
-                        alert(`Searching for: ${searchTerm}`);
-                    }
-                }
-            });
-        }
-        const bookBtn = document.querySelector('.book-btn');
-        if (bookBtn) {
-            bookBtn.addEventListener('click', () => {
-                alert('Booking system coming soon! Please call us at (+92) 323-12345');
-            });
-        }
-        document.querySelectorAll('.floating-icon').forEach(icon => {
-            icon.addEventListener('mouseenter', () => {
-                icon.style.transform = 'scale(1.3) rotate(15deg)';
-                icon.style.transition = 'transform 0.3s ease';
-            });
-            icon.addEventListener('mouseleave', () => {
-                icon.style.transform = 'scale(1) rotate(0deg)';
-            });
-        });
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroContent = document.querySelector('.hero-content');
-            const icons = document.querySelectorAll('.floating-icon');
-
-            if (heroContent) {
-                heroContent.style.transform = `translate(-50%, calc(-50% + ${scrolled * 0.2}px))`;
-                heroContent.style.opacity = 1 - scrolled / 600;
-            }
-
-            icons.forEach((icon, index) => {
-                const speed = 0.3 + index * 0.1;
-                icon.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-        const cartArea = document.querySelector('.icons');
-        if (cartArea) {
-            const cart = cartArea.children[1];
-            if (cart) {
-                cart.addEventListener('click', () => {
-                    alert('Your cart is empty. Start shopping!');
-                });
-            }
-
-            const user = cartArea.children[0];
-            if (user) {
-                user.addEventListener('click', () => {
-                    alert('Login/Register feature coming soon!');
-                });
-            }
-        }
-        const sections = document.querySelectorAll('section[id]');
-        const menuLinks = document.querySelectorAll('.menu a');
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const top = section.offsetTop;
-                if (pageYOffset >= top - 200) {
-                    current = section.id;
-                }
-            });
-
-            menuLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-        let testimonialIndex = 0;
-        const testimonialCards = document.querySelectorAll('.testimonial-card');
-        function rotateTestimonials() {
-            if (testimonialCards.length > 0) {
-                testimonialCards.forEach((card, i) => {
-                    if (i === testimonialIndex) {
-                        card.style.transform = 'scale(1.05)';
-                        card.style.boxShadow = '0 20px 50px rgba(193, 105, 127, 0.3)';
-                    } else {
-                        card.style.transform = 'scale(1)';
-                        card.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
-                    }
-                });
-                testimonialIndex = (testimonialIndex + 1) % testimonialCards.length;
-            }
-        }
-        setInterval(rotateTestimonials, 4000);
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '0';
-            setTimeout(() => {
-                document.body.style.transition = 'opacity 0.5s ease';
-                document.body.style.opacity = '1';
-            }, 100);
-        });
-
-        console.log('%c🎀 Welcome to Beauty Studio! 🎀', 'color: #C1697F; font-size: 24px; font-weight: bold;');
-        console.log('%cYour ultimate beauty destination since 1985', 'color: #F4AFC5; font-size: 14px;');
-
-
-        const buttons = document.querySelectorAll('.book-btn, .btn-primary, .btn-secondary, .cta-btn');
-        buttons.forEach(button => {
-            button.addEventListener('click', function (e) {
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = x + 'px';
-                ripple.style.top = y + 'px';
-                ripple.classList.add('ripple');
-
-                this.appendChild(ripple);
-                setTimeout(() => ripple.remove(), 600);
-            });
-        });
-        const style = document.createElement('style');
-        style.textContent = `
-    .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.6);
-        transform: scale(0);
-        animation: ripple-animation 0.6s ease-out;
-        pointer-events: none;
-    }
-
-    @keyframes ripple-animation {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-
-    button, .btn-primary, .btn-secondary, .cta-btn {
-        position: relative;
-        overflow: hidden;
-    }
-`;
-        document.head.appendChild(style);
     </script>
 
 </body>
